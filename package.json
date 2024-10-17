@@ -1,0 +1,19 @@
+{
+  "name": "ofmaps-types",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Artyom Ugryumov",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@lights-on-projects/prettier-config": "^1.0.0",
+    "@types/node": "^22.7.6",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "prettier": "@lights-on-projects/prettier-config"
+}
