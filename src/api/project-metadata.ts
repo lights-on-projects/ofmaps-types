@@ -1,24 +1,13 @@
 import { AuthToken, LayerID, Plugins } from '../common'
+import { GetRequestBody } from './get-request-body'
 
-export interface EndpointProjectMetadataType {
-  /**
-   * Данные авторизации
-   * @todo неизвестно для чего используется
-   */
-  authorization: unknown
-
-  /**
-   * Название контроллера. Информация для бэка, на фронте не нужно
-   * @deprecated
-   */
-  controller: string
-
+export interface EndpointProjectMetadataType extends GetRequestBody {
   /**
    * Метаданные проекта
    */
   metablock: {
     /**
-     * Данные для бэка
+     * Техническое поле
      * @deprecated
      */
     class_version: string
@@ -231,30 +220,6 @@ export interface EndpointProjectMetadataType {
    * @deprecated
    */
   required_libs: unknown
-
-  /**
-   * Статус запроса
-   *
-   * - Вернет ok, если запрос выполнен успешно
-   * - Вернет error, если запрос вернул ошибку
-   * - Вернет auth, если для выполнения запроса требуется авторизация.
-   *
-   * У некоторых запросов,
-   * например get_me, при ошибке авторизации вернется error, а не auth.
-   */
-  status: 'ok' | 'error' | 'auth'
-
-  /**
-   * Данные для авторизации
-   */
-  ws_auth: {
-    /**
-     * Токен для авторизации
-     *
-     * Если токена нет, будет иметь значение `-invalid-`
-     */
-    wst: AuthToken | '-invalid-'
-  }
 }
 
 // const Variable: EndpointProjectMetadataType = {
