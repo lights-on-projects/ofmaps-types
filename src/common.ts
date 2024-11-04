@@ -60,11 +60,46 @@ export enum Plugins {
   UserFields = 'd56e0e5438ea4f7e81c820fdd380ef4e',
 }
 
+/**
+ * Токен для аутентификации
+ */
 export type AuthToken = string & { __brand: 'AuthToken' }
+
+/**
+ * ID воркспейса
+ */
 export type WorkspaceID = number & { __brand: 'WorkspaceID' }
+
+/**
+ * ID проекта
+ */
 export type ProjectID = number & { __brand: 'ProjectID' }
+
+/**
+ * ID слоя
+ */
 export type LayerID = string & { __brand: 'LayerID' }
+
+/**
+ * ID точки
+ */
 export type PointID = string & { __brand: 'PointID' }
+
+/**
+ * Цвет в формате HEX
+ */
 export type HEX = string & { __brand: 'HEX' }
 
-export type UserRole = 'admin' | 'client' | 'none'
+/**
+ * Цвет в формате RGB
+ */
+export type RGB = string & { __brand: 'RGB' }
+
+/**
+ * Роли пользователя
+ */
+export enum UserRole {
+  Admin = 'admin',
+  Client = 'client',
+  None = 'none',
+}
