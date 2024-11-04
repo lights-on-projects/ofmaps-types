@@ -86,6 +86,11 @@ export type LayerID = string & { __brand: 'LayerID' }
 export type PointID = string & { __brand: 'PointID' }
 
 /**
+ * ID пользователя
+ */
+export type UserID = number & { __brand: 'UserID' }
+
+/**
  * Цвет в формате HEX
  */
 export type HEX = string & { __brand: 'HEX' }
