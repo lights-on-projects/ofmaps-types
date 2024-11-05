@@ -1,6 +1,7 @@
 {
   "name": "@lights-on-projects/ofmaps-types",
-  "version": "0.0.1",
+  "description": "Описание интерфейсов и типов API фронтенда Карт Офиса",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -20,7 +21,6 @@
   "keywords": [],
   "author": "Artyom Ugryumov",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@lights-on-projects/prettier-config": "^1.0.0",
     "prettier": "^3.3.3",
