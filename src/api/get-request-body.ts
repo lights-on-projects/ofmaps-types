@@ -1,5 +1,8 @@
 import { AuthToken } from '../common'
 
+/**
+ * Общие поля, которые содержит любой запрос
+ */
 export interface GetRequestBody {
   /**
    * Данные авторизации

@@ -1,6 +1,9 @@
 import { AuthToken, LayerID, Plugins } from '../common'
 import { GetRequestBody } from './get-request-body'
 
+/**
+ * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
+ */
 export interface EndpointProjectMetadataType extends GetRequestBody {
   /**
    * Метаданные проекта
