@@ -1,6 +1,9 @@
 import { UserID, UserRole, WorkspaceID } from '../common'
 import { GetRequestBody } from './get-request-body'
 
+/**
+ * Ответ запроса {@link https://doc.leader.ironstar.pw/#/00-authorization/app_get_me|GET /App/Auth/API?action=get_me&id={workspace_id}}
+ */
 export interface EndpointGetMeType extends GetRequestBody {
   /**
    * Данные текущего пользователя
@@ -41,6 +44,13 @@ export interface EndpointGetMeType extends GetRequestBody {
        */
       password: '*'
 
+      /**
+       * Проекты, к которым пользователь имеет доступ.
+       * Ключ - id проекта, значение - роль пользователя.
+       *
+       * @todo ключ имеет шаблон P<project_id>. Везде ли используется такой формат id проекта? Если да, то
+       * в качестве ключа следует указать ProjectID.
+       */
       projects: Record<string, UserRole>
 
       /**
