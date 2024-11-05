@@ -1,6 +1,11 @@
-import { CustomFieldType, LayerTypeID, Plugins, UserRole } from '../common'
+import {
+  CustomFieldType,
+  LayerTypeID,
+  Plugins,
+  UserRole,
+  ProjectUserDataType,
+} from '../shared'
 import { GetRequestBody } from './get-request-body'
-import { ProjectUserDataType } from '../shared/project-user-data'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}

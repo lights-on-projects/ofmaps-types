@@ -1,4 +1,4 @@
-import { UserID, UserRole, WorkspaceID } from '../common'
+import { UserID, UserRole, WorkspaceID } from '../shared'
 import { GetRequestBody } from './get-request-body'
 
 /**

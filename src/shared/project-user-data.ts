@@ -1,4 +1,4 @@
-import { Plugins, UserRole } from '../common'
+import { Plugins, UserRole } from './common'
 
 /**
  * Данные пользователя для работы с проектом
