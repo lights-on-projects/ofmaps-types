@@ -76,6 +76,11 @@ export type WorkspaceID = number & { __brand: 'WorkspaceID' }
 export type ProjectID = number & { __brand: 'ProjectID' }
 
 /**
+ * ID типа слоя
+ */
+export type LayerTypeID = string & { __brand: 'LayerTypeID' }
+
+/**
  * ID слоя
  */
 export type LayerID = string & { __brand: 'LayerID' }
