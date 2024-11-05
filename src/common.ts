@@ -83,7 +83,14 @@ export type LayerTypeID = string & { __brand: 'LayerTypeID' }
 /**
  * ID слоя
  */
-export type LayerID = string & { __brand: 'LayerID' }
+export type LayerID = number & {
+  __brand: 'LayerID'
+}
+
+/**
+ * Строковый ID слоя
+ */
+export type LayerIDString = `N${LayerID}`
 
 /**
  * ID точки
