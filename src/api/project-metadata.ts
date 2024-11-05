@@ -1,5 +1,6 @@
-import { AuthToken, LayerID, Plugins } from '../common'
+import { CustomFieldType, LayerTypeID, Plugins, UserRole } from '../common'
 import { GetRequestBody } from './get-request-body'
+import { ProjectUserDataType } from '../shared/project-user-data'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
@@ -29,12 +30,12 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
      * Список с типами слоёв
      */
     layers: Record<
-      LayerID,
+      LayerTypeID,
       {
         /**
          * Id слоя
          */
-        uid: LayerID
+        uid: LayerTypeID
 
         /**
          * Название типа слоя
@@ -119,7 +120,7 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
         /**
          * Список ID слоёв, в которых может содержаться слой данного типа
          */
-        containers: LayerID[]
+        containers: LayerTypeID[]
 
         /**
          * Список с данными плагинов
@@ -146,7 +147,48 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
           }
 
           [Plugins.ExtendedFields]: {
-            fields: []
+            fields: {
+              /**
+               * @todo
+               */
+              block: string
+
+              /**
+               * Дополнительная информация (зависит от поля)
+               */
+              extension: string | null
+
+              /**
+               * Id поля
+               */
+              id: number
+
+              /**
+               * Поле должно быть в выдаче листера при определенных запросах. Может пригодиться для отчётов
+               */
+              lister: boolean
+
+              /**
+               * Название поля
+               */
+              name: string
+
+              /**
+               * Поле обязательно для заполнения
+               */
+              obligate: boolean
+
+              /**
+               * Порядок сортровки (по отношению к другим полям)
+               * @todo Описать принцип работы
+               */
+              sort: number
+
+              /**
+               * ID кастомного поля
+               */
+              type_id: CustomFieldType
+            }[]
           }
 
           // [Omit<
@@ -186,31 +228,12 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
   /**
    * Права доступа к текущему проекту
    */
-  project_access: 'admin' | 'client' | 'none'
+  project_access: UserRole
 
   /**
    * Данные пользователя для работы с проектом
    */
-  project_user_data: {
-    /**
-     * Права доступа к текущему проекту
-     *
-     * То же самое, что и `project_access`
-     */
-    role: 'admin' | 'client' | 'none'
-
-    /**
-     * Права доступа к воркспейсу
-     */
-    wsa: 'admin' | 'client' | 'none'
-
-    /**
-     * Настройки плагина для текущего пользователя
-     *
-     * Ключи объекта это ID плагинов
-     */
-    plugin_data: Partial<Record<`${Plugins}`, Record<string, any>>>
-  }
+  project_user_data: ProjectUserDataType
 
   /**
    * Используется для старого фронта
