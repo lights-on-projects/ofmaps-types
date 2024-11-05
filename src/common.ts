@@ -108,3 +108,70 @@ export enum UserRole {
   Client = 'client',
   None = 'none',
 }
+
+/**
+ * Типы кастомных полей
+ */
+export enum CustomFieldType {
+  /**
+   * Логический (да/нет)
+   */
+  Boolean = 'bool',
+
+  /**
+   * Строка до 16мб
+   */
+  BigString = 'btext',
+
+  /**
+   * Строка до 512 символов utf8mb4 (2048 ascii)
+   */
+  String = 'string',
+
+  /**
+   * Электронная почта
+   */
+  Email = 'email',
+
+  /**
+   * xml/html текст до 16мб
+   */
+  XML = 'xml',
+
+  /**
+   * Номер телефона
+   */
+  Phone = 'phone',
+
+  /**
+   * Целое число
+   */
+  Integer = 'int',
+
+  /**
+   * Число с плавающей точкой
+   */
+  Double = 'double',
+
+  /**
+   * Дата
+   * @todo в каком формате?
+   */
+  Date = 'date',
+
+  /**
+   * Дата со временем
+   * @todo в каком формате?
+   */
+  DateTime = 'datetime',
+
+  /**
+   * Набор изображений
+   */
+  Gallery = 'gallery',
+
+  /**
+   * Изображение (одно)
+   */
+  Image = 'image',
+}
