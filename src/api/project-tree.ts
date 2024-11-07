@@ -1,11 +1,5 @@
-import {
-  HEX,
-  LayerID,
-  LayerIDString,
-  LayerTypeID,
-  UserRole,
-  ProjectUserDataType,
-} from '../shared'
+import { HEX, LayerID, LayerIDString, LayerTypeID, UserRole } from '../shared'
+import { ProjectUserDataType } from './blocks'
 import { GetRequestBody } from './get-request-body'
 
 /**

@@ -1,9 +1,10 @@
-import { Plugins, UserRole } from './common'
+import { UserRole } from '../../shared/common'
+import { PluginBookingsOfCurrentUser, Plugins } from '../../plugins'
 
 /**
  * Данные пользователя для работы с проектом
  */
-export type ProjectUserDataType = {
+export interface ProjectUserDataType {
   /**
    * Права доступа к текущему проекту
    *
@@ -21,5 +22,8 @@ export type ProjectUserDataType = {
    *
    * Ключи объекта это ID плагинов
    */
-  plugin_data: Partial<Record<`${Plugins}`, Record<string, any>>>
+  // plugin_data: Partial<Record<`${Plugins}`, Record<string, any>>>
+  plugin_data: {
+    [Plugins.Bookings]: PluginBookingsOfCurrentUser
+  }
 }
