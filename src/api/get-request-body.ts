@@ -3,7 +3,7 @@ import { AuthToken } from '../common.types'
 /**
  * Общие поля, которые содержит любой запрос
  */
-export interface GetRequestBody {
+export interface IGetRequestBody {
   /**
    * Данные авторизации
    * @todo неизвестно для чего используется

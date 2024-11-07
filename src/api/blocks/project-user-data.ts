@@ -4,7 +4,7 @@ import { PluginBookingsOfCurrentUser, Plugins } from '../../plugins'
 /**
  * Данные пользователя для работы с проектом
  */
-export interface ProjectUserDataType {
+export interface IProjectUserData {
   /**
    * Права доступа к текущему проекту
    *

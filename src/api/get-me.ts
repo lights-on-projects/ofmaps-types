@@ -1,10 +1,10 @@
 import { UserID, UserRole, WorkspaceID } from '../common.types'
-import { GetRequestBody } from './get-request-body'
+import { IGetRequestBody } from './get-request-body'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/00-authorization/app_get_me|GET /App/Auth/API?action=get_me&id={workspace_id}}
  */
-export interface EndpointGetMeType extends GetRequestBody {
+export interface IEndpointGetMe extends IGetRequestBody {
   /**
    * Данные текущего пользователя
    */

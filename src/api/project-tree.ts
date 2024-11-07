@@ -5,13 +5,13 @@ import {
   LayerTypeID,
   UserRole,
 } from '../common.types'
-import { ProjectUserDataType } from './blocks'
-import { GetRequestBody } from './get-request-body'
+import { IProjectUserData } from './blocks'
+import { IGetRequestBody } from './get-request-body'
 
 /**
  * Описание запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_tree|GET /project/workspace_id/project_id/API?action=project_tree}
  */
-export interface EndpointProjectTreeType extends GetRequestBody {
+export interface IEndpointProjectTree extends IGetRequestBody {
   /**
    * Права доступа к текущему проекту
    */
@@ -20,18 +20,18 @@ export interface EndpointProjectTreeType extends GetRequestBody {
   /**
    * Данные пользователя для работы с проектом
    */
-  project_user_data: ProjectUserDataType
+  project_user_data: IProjectUserData
 
   /**
    * Древо со слоями
    */
-  tree: LayerOfTreeType[]
+  tree: ITreeLayer[]
 }
 
 /**
  * Данные слоя на уровне древа
  */
-export type LayerOfTreeType = {
+export type ITreeLayer = {
   /**
    * ID слоя
    */
@@ -65,7 +65,7 @@ export type LayerOfTreeType = {
   /**
    * Дочерние слои
    */
-  childs: LayerOfTreeType[]
+  childs: ITreeLayer[]
 
   /**
    * Текст метки нужно обрезать

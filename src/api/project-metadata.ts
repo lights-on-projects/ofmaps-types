@@ -1,6 +1,6 @@
 import { LayerTypeID, UserRole } from '../common.types'
-import { ProjectUserDataType } from './blocks'
-import { GetRequestBody } from './get-request-body'
+import { IProjectUserData } from './blocks'
+import { IGetRequestBody } from './get-request-body'
 import {
   Plugins,
   PluginBookingsOfLayerType,
@@ -10,11 +10,11 @@ import {
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
  */
-export interface EndpointProjectMetadataType extends GetRequestBody {
+export interface IEndpointProjectMetadata extends IGetRequestBody {
   /**
    * Метаданные проекта
    */
-  metablock: MetablockType
+  metablock: IMetablock
 
   /**
    * Права доступа к текущему проекту
@@ -24,7 +24,7 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
   /**
    * Данные пользователя для работы с проектом
    */
-  project_user_data: ProjectUserDataType
+  project_user_data: IProjectUserData
 
   /**
    * Используется для старого фронта
@@ -39,7 +39,7 @@ export interface EndpointProjectMetadataType extends GetRequestBody {
   required_libs: unknown
 }
 
-export interface MetablockType {
+export interface IMetablock {
   /**
    * Техническое поле
    * @deprecated
@@ -59,7 +59,7 @@ export interface MetablockType {
   /**
    * Список с типами слоёв
    */
-  layers: Record<LayerTypeID, TypeOfLayerType>
+  layers: Record<LayerTypeID, ILayerType>
 
   /**
    * Название метаблока
@@ -90,7 +90,7 @@ export interface MetablockType {
 /**
  * Тип слоя
  */
-export interface TypeOfLayerType {
+export interface ILayerType {
   /**
    * Id слоя
    */
@@ -114,7 +114,7 @@ export interface TypeOfLayerType {
   /**
    * Объект с данными иконки типа слоя
    */
-  icon: IconObject
+  icon: IIconObject
 
   /**
    * Список ID слоёв, в которых может содержаться слой данного типа
@@ -141,7 +141,7 @@ export interface TypeOfLayerType {
 /**
  * Объект иконки, возвращаемый сервером
  */
-export interface IconObject {
+export interface IIconObject {
   /**
    * @todo
    */
