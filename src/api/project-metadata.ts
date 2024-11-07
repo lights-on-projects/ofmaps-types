@@ -1,4 +1,4 @@
-import { LayerTypeID, UserRole } from '../shared'
+import { LayerTypeID, UserRole } from '../common.types'
 import { ProjectUserDataType } from './blocks'
 import { GetRequestBody } from './get-request-body'
 import {

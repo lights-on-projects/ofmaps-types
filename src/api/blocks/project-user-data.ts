@@ -1,4 +1,4 @@
-import { UserRole } from '../../shared/common'
+import { UserRole } from '../../common.types'
 import { PluginBookingsOfCurrentUser, Plugins } from '../../plugins'
 
 /**

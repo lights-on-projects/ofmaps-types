@@ -1,2 +1,3 @@
 export * from './api'
-export * from './shared'
+export * from './plugins'
+export * from './common.types'

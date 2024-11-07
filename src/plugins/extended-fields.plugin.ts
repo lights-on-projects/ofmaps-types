@@ -1,4 +1,4 @@
-import { CustomFieldType } from '../shared'
+import { CustomFieldType } from '../common.types'
 
 /**
  * Данные плагина ExtendedFields

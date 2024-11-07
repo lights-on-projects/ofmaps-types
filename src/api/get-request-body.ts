@@ -1,4 +1,4 @@
-import { AuthToken } from '../shared'
+import { AuthToken } from '../common.types'
 
 /**
  * Общие поля, которые содержит любой запрос
