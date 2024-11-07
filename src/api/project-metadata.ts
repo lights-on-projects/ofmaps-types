@@ -35,6 +35,9 @@ export interface IEndpointProjectMetadata extends IGetRequestBody {
   required_libs: unknown
 }
 
+/**
+ * Объект метаблока
+ */
 export interface IMetablock {
   /**
    * Техническое поле
@@ -123,15 +126,12 @@ export interface ILayerType {
    * Каждый плагин имеет свой уникальный ID, одинаковый в каждом проекте.
    * Для получения данных определенного плагина, используй enum Plugins.
    */
-  plugin_data: {
-    [Plugins.Bookings]: IPluginBookings.LayerType
-    [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
-
-    // [Omit<
-    //   keyof typeof Plugins,
-    //   Plugins.Bookings & Plugins.ExtendedFields
-    // >]: {}
-  }
+  plugin_data: Partial<
+    Record<Plugins, object> & {
+      [Plugins.Bookings]: IPluginBookings.LayerType
+      [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
+    }
+  >
 }
 
 /**

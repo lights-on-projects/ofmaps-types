@@ -23,7 +23,9 @@ export interface IProjectUserData {
    * Ключи объекта это ID плагинов
    */
   // plugin_data: Partial<Record<`${Plugins}`, Record<string, any>>>
-  plugin_data: {
-    [Plugins.Bookings]: IPluginBookings.CurrentUser
-  }
+  plugin_data: Partial<
+    Record<Plugins, object> & {
+      [Plugins.Bookings]: IPluginBookings.CurrentUser
+    }
+  >
 }

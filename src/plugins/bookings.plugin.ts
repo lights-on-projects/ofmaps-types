@@ -9,7 +9,7 @@ export namespace IPluginBookings {
     /**
      * Данный тип можно забронировать
      */
-    bookable: true
+    bookable: boolean
 
     /**
      * Категория бронирования по умолчанию
