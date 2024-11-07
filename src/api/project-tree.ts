@@ -31,7 +31,7 @@ export interface EndpointProjectTreeType extends GetRequestBody {
 /**
  * Данные слоя на уровне древа
  */
-type LayerOfTreeType = {
+export type LayerOfTreeType = {
   /**
    * ID слоя
    */
