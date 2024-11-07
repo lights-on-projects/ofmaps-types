@@ -1,11 +1,7 @@
 import { LayerTypeID, UserRole } from '../common.types'
 import { IProjectUserData } from './blocks'
 import { IGetRequestBody } from './get-request-body'
-import {
-  Plugins,
-  PluginBookingsOfLayerType,
-  PluginExtendedFieldsOfLayerType,
-} from '../plugins'
+import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
@@ -128,8 +124,8 @@ export interface ILayerType {
    * Для получения данных определенного плагина, используй enum Plugins.
    */
   plugin_data: {
-    [Plugins.Bookings]: PluginBookingsOfLayerType
-    [Plugins.ExtendedFields]: PluginExtendedFieldsOfLayerType
+    [Plugins.Bookings]: IPluginBookings.LayerType
+    [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
 
     // [Omit<
     //   keyof typeof Plugins,

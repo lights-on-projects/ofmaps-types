@@ -1,5 +1,5 @@
 import { UserRole } from '../../common.types'
-import { PluginBookingsOfCurrentUser, Plugins } from '../../plugins'
+import { IPluginBookings, Plugins } from '../../plugins'
 
 /**
  * Данные пользователя для работы с проектом
@@ -24,6 +24,6 @@ export interface IProjectUserData {
    */
   // plugin_data: Partial<Record<`${Plugins}`, Record<string, any>>>
   plugin_data: {
-    [Plugins.Bookings]: PluginBookingsOfCurrentUser
+    [Plugins.Bookings]: IPluginBookings.CurrentUser
   }
 }
