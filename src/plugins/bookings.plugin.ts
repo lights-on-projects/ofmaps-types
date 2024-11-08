@@ -23,6 +23,26 @@ export namespace IPluginBookings {
   }
 
   /**
+   * Данные плагина для типа точки
+   */
+  export interface PointType {
+    /**
+     * Данный тип можно забронировать
+     */
+    bookable: boolean
+
+    /**
+     * Категория бронирования по умолчанию
+     */
+    default_category: string
+
+    /**
+     * Стек бронирования по умолчанию
+     */
+    default_stack: string
+  }
+
+  /**
    * Данные плагина для текущего пользователя
    */
   export interface CurrentUser {

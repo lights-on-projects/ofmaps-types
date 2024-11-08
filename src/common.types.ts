@@ -44,6 +44,16 @@ export type LayerIDString = `N${LayerID}` & { __brand: 'LayerIDString' }
 export type PointID = string & { __brand: 'PointID' }
 
 /**
+ * ID типа точки
+ */
+export type PointTypeID = string & { __brand: 'PointTypeID' }
+
+/**
+ * ID кастомного поля
+ */
+export type CustomFieldID = number & { __brand: 'CustomFieldID' }
+
+/**
  * ID пользователя
  */
 export type UserID = number & { __brand: 'UserID' }
