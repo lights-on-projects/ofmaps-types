@@ -46,7 +46,12 @@ export type LayerIDString = `N${LayerID}` & { __brand: 'LayerIDString' }
 /**
  * ID точки
  */
-export type PointID = string & { __brand: 'PointID' }
+export type PointID = number & { __brand: 'PointID' }
+
+/**
+ * Строковый ID слоя
+ */
+export type PointIDString = `P${PointID}` & { __brand: 'PointIDString' }
 
 /**
  * ID типа точки
@@ -79,6 +84,11 @@ export type UserFieldID = string & { __brand: 'UserFieldID' }
 export type IconID = string & { __brand: 'IconID' }
 
 /**
+ * ID брони
+ */
+export type BookingID = string & { __brand: 'BookingID' }
+
+/**
  * Цвет в формате HEX
  */
 export type HEX = string & { __brand: 'HEX' }
@@ -87,6 +97,16 @@ export type HEX = string & { __brand: 'HEX' }
  * Цвет в формате RGB
  */
 export type RGB = string & { __brand: 'RGB' }
+
+/**
+ * Дата в формате ISO
+ */
+export type DateISO = string & { __brand: 'DateISO' }
+
+/**
+ * Дата и время в формате ISO
+ */
+export type DateTimeISO = string & { __brand: 'DateTimeISO' }
 
 /**
  * Роли пользователя
