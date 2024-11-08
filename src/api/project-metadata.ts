@@ -2,35 +2,25 @@ import {
   CustomFieldID,
   CustomFieldType,
   HEX,
-  IconID,
   IImageObject,
   LayerTypeID,
   MetablockID,
   PointTypeID,
-  UserRole,
   WorkspaceID,
 } from '../common.types'
-import { IProjectUserData, IGetRequestBody } from '../blocks'
+import { IGetRequestBody, IProjectAccess } from '../blocks'
 import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
  */
-export interface IEndpointProjectMetadata extends IGetRequestBody {
+export interface IEndpointProjectMetadata
+  extends IGetRequestBody,
+    IProjectAccess {
   /**
    * Метаданные проекта
    */
   metablock: IMetablock
-
-  /**
-   * Права доступа к текущему проекту
-   */
-  project_access: UserRole
-
-  /**
-   * Данные пользователя для работы с проектом
-   */
-  project_user_data: IProjectUserData
 
   /**
    * Используется для старого фронта

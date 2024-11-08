@@ -1,4 +1,4 @@
-import { IGetRequestBody, IProjectUserData, ITreeLayer } from '../blocks'
+import { IGetRequestBody, IProjectAccess, ITreeLayer } from '../blocks'
 import {
   HEX,
   IImageObject,
@@ -9,7 +9,6 @@ import {
   PointTypeID,
   PointTypeName,
   ProjectID,
-  UserRole,
   WorkspaceID,
 } from '../common.types'
 import { IPluginBookings, Plugins } from '../plugins'
@@ -20,17 +19,7 @@ import { IPluginBookings, Plugins } from '../plugins'
  * Объект содержит данные самого слоя, данные дочерних слоев и данные точек размещенных на слое
  * Если слой не имеет отображения (own_view: false), то запрос вернет ошибку: `error_info.message: "no_visible_layer_found"`
  */
-export interface IGetLayerView extends IGetRequestBody {
-  /**
-   * Права доступа к текущему проекту
-   */
-  project_access: UserRole
-
-  /**
-   * Данные пользователя для работы с проектом
-   */
-  project_user_data: IProjectUserData
-
+export interface IGetLayerView extends IGetRequestBody, IProjectAccess {
   /**
    * Данные слоя
    */

@@ -1,5 +1,17 @@
+import { IPluginBookings, Plugins } from 'plugins'
 import { UserRole } from '../common.types'
-import { IPluginBookings, Plugins } from '../plugins'
+
+export interface IProjectAccess {
+  /**
+   * Права доступа к текущему проекту
+   */
+  project_access: UserRole
+
+  /**
+   * Данные пользователя для работы с проектом
+   */
+  project_user_data: IProjectUserData
+}
 
 /**
  * Данные пользователя для работы с проектом
