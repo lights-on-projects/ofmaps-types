@@ -14,6 +14,11 @@ export type WorkspaceID = number & { __brand: 'WorkspaceID' }
 export type ProjectID = number & { __brand: 'ProjectID' }
 
 /**
+ * Строковый ID проекта
+ */
+export type ProjectIDString = `P${ProjectID}`
+
+/**
  * ID типа слоя
  */
 export type LayerTypeID = string & { __brand: 'LayerTypeID' }
