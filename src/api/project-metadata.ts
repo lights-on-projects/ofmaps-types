@@ -2,6 +2,7 @@ import {
   CustomFieldID,
   CustomFieldType,
   HEX,
+  IconID,
   LayerTypeID,
   MetablockID,
   PointTypeID,
@@ -264,12 +265,14 @@ export interface ILayerType {
  */
 export interface IIconObject {
   /**
-   * @todo
+   * Контекст изображения
+   *
+   * Контекст - логическая связка типа объектов с группой изображений. Кроме того в контекст можно установить ограничния на размер и тип изображений
    */
   context_name: string
 
   /**
-   * @todo
+   * Набор подрезок изображения
    */
   crops: unknown[]
 
@@ -286,7 +289,7 @@ export interface IIconObject {
   /**
    * ID иконки
    */
-  image_id: string
+  image_id: IconID
 
   /**
    * MIME-тип
@@ -309,17 +312,19 @@ export interface IIconObject {
   owner_id: string
 
   /**
-   * @todo
+   * KVS хранилище объекта
    */
   properties: unknown[]
 
   /**
-   * @todo
+   * Порядок сортировки, если объект имеет несколько изображений
    */
   sort: number
 
   /**
-   * @todo
+   * Изображение корректное.
+   *
+   * В большинстве случаев, когда нет изображения - вся эта структура просто будет null, но иногда структура может существовать и при отсутствующем изображении. В этом случае тут будет false
    */
-  valid: boolean
+  valid: boolean | null
 }

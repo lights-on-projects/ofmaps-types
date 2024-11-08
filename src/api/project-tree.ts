@@ -30,7 +30,7 @@ export interface IEndpointProjectTree extends IGetRequestBody {
 /**
  * Данные слоя на уровне древа
  */
-export type ITreeLayer = {
+export interface ITreeLayer {
   /**
    * ID слоя
    */

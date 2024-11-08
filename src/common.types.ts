@@ -59,6 +59,11 @@ export type CustomFieldID = number & { __brand: 'CustomFieldID' }
 export type UserID = number & { __brand: 'UserID' }
 
 /**
+ * ID иконки
+ */
+export type IconID = string & { __brand: 'IconID' }
+
+/**
  * Цвет в формате HEX
  */
 export type HEX = string & { __brand: 'HEX' }
