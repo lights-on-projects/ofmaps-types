@@ -59,6 +59,11 @@ export type CustomFieldID = number & { __brand: 'CustomFieldID' }
 export type UserID = number & { __brand: 'UserID' }
 
 /**
+ * ID поля пользователя
+ */
+export type UserFieldID = string & { __brand: 'UserFieldID' }
+
+/**
  * ID иконки
  */
 export type IconID = string & { __brand: 'IconID' }
@@ -147,6 +152,58 @@ export enum CustomFieldType {
    * Изображение (одно)
    */
   Image = 'image',
+}
+
+/**
+ * Типы полей пользователей
+ */
+export enum UserFieldType {
+  /**
+   * Логический (да/нет)
+   */
+  Boolean = 'bool',
+
+  /**
+   * Строка до 512 символов utf8mb4 (2048 ascii)
+   */
+  String = 'string',
+
+  /**
+   * Электронная почта
+   */
+  Email = 'email',
+
+  /**
+   * Номер телефона
+   */
+  Phone = 'phone',
+
+  /**
+   * Целое число
+   */
+  Integer = 'int',
+
+  /**
+   * Число с плавающей точкой
+   */
+  Double = 'double',
+
+  /**
+   * Дата
+   * @todo в каком формате?
+   */
+  Date = 'date',
+
+  /**
+   * Дата со временем
+   * @todo в каком формате?
+   */
+  DateTime = 'datetime',
+
+  /**
+   * Поле выбора
+   */
+  Select = 'select',
 }
 
 /**
