@@ -5,7 +5,7 @@
 
 - `block` - неизвестное для чего используется
 
-## interface IIconObject
+## interface IImageObject
 
 - context_name:
 

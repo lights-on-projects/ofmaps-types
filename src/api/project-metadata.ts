@@ -3,6 +3,7 @@ import {
   CustomFieldType,
   HEX,
   IconID,
+  IImageObject,
   LayerTypeID,
   MetablockID,
   PointTypeID,
@@ -127,7 +128,7 @@ export interface IPointType {
   /**
    * Объект иконки типа точки
    */
-  icon: IIconObject
+  icon: IImageObject
 
   /**
    * Описание типа точки
@@ -239,7 +240,7 @@ export interface ILayerType {
   /**
    * Объект с данными иконки типа слоя
    */
-  icon: IIconObject
+  icon: IImageObject
 
   /**
    * Список ID слоёв, в которых может содержаться слой данного типа
@@ -258,73 +259,4 @@ export interface ILayerType {
       [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
     }
   >
-}
-
-/**
- * Объект иконки, возвращаемый сервером
- */
-export interface IIconObject {
-  /**
-   * Контекст изображения
-   *
-   * Контекст - логическая связка типа объектов с группой изображений. Кроме того в контекст можно установить ограничния на размер и тип изображений
-   */
-  context_name: string
-
-  /**
-   * Набор подрезок изображения
-   */
-  crops: unknown[]
-
-  /**
-   * Расширение иконки
-   */
-  extension: string
-
-  /**
-   * @todo
-   */
-  hash: string
-
-  /**
-   * ID иконки
-   */
-  image_id: IconID
-
-  /**
-   * MIME-тип
-   */
-  mime: string
-
-  /**
-   * Безопасный MIME-тип
-   *
-   * Тоже самое что и `mime`, но вместо слэша - нижнее подчеркивание
-   */
-  mime_safe: string
-
-  /**
-   * ID родительского метаблока
-   *
-   * Свойство возвращается с типом string. Для дальнейшей работы его нужно конвертировать
-   * в number, т.к. значение всегда является числом. Ошибка на стороне бэка.
-   */
-  owner_id: string
-
-  /**
-   * KVS хранилище объекта
-   */
-  properties: unknown[]
-
-  /**
-   * Порядок сортировки, если объект имеет несколько изображений
-   */
-  sort: number
-
-  /**
-   * Изображение корректное.
-   *
-   * В большинстве случаев, когда нет изображения - вся эта структура просто будет null, но иногда структура может существовать и при отсутствующем изображении. В этом случае тут будет false
-   */
-  valid: boolean | null
 }
