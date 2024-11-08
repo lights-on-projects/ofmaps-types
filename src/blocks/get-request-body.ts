@@ -39,7 +39,7 @@ export interface IGetRequestBody {
    *
    * Поле доступно только если запрос возвращает ошибку
    */
-  error_info?: {
+  error_info: {
     /**
      * Описание ошибки
      */
