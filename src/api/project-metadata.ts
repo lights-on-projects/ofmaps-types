@@ -1,4 +1,9 @@
-import { LayerTypeID, UserRole } from '../common.types'
+import {
+  LayerTypeID,
+  MetablockID,
+  UserRole,
+  WorkspaceID,
+} from '../common.types'
 import { IProjectUserData, IGetRequestBody } from '../blocks'
 import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
 
@@ -47,7 +52,7 @@ export interface IMetablock {
   /**
    * ID метаблока
    */
-  id: number
+  id: MetablockID
 
   /**
    * Описание метаблока
@@ -77,7 +82,7 @@ export interface IMetablock {
   /**
    * Id воркспейса, которому принадлежит метаблок
    */
-  workspace_id: number
+  workspace_id: WorkspaceID
 
   /**
    * Название воркспейса, которому принадлежит метаблок

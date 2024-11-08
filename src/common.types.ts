@@ -9,6 +9,11 @@ export type AuthToken = string & { __brand: 'AuthToken' }
 export type WorkspaceID = number & { __brand: 'WorkspaceID' }
 
 /**
+ * ID метаблока
+ */
+export type MetablockID = number & { __brand: 'MetablockID' }
+
+/**
  * ID проекта
  */
 export type ProjectID = number & { __brand: 'ProjectID' }
