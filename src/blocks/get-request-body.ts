@@ -10,10 +10,10 @@ export interface IGetRequestBody {
    */
   authorization: {
     /**
-     * Токен для авторизации. Всегда -invalid-
+     * Токен для авторизации. Всегда invalid
      * @deprecated
      */
-    auth_token: '-invalid-'
+    auth_token: 'invalid'
   }
 
   /**
