@@ -126,7 +126,7 @@ export interface ILayerType {
    * Для получения данных определенного плагина, используй enum Plugins.
    */
   plugin_data: Partial<
-    Record<Plugins, object> & {
+    Record<Plugins, Record<string, any>> & {
       [Plugins.Bookings]: IPluginBookings.LayerType
       [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
     }
