@@ -54,7 +54,7 @@ export interface IMeDataUI {
   /**
    * Роль пользователя в воркспейсе
    */
-  role: Exclude<UserRole, UserRole.None>
+  role: UserRole.Admin | UserRole.Client
 
   /**
    * Дубликат role

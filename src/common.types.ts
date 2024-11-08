@@ -16,7 +16,7 @@ export type ProjectID = number & { __brand: 'ProjectID' }
 /**
  * Строковый ID проекта
  */
-export type ProjectIDString = `P${ProjectID}`
+export type ProjectIDString = `P${ProjectID}` & { __brand: 'ProjectIDString' }
 
 /**
  * ID типа слоя
@@ -26,14 +26,12 @@ export type LayerTypeID = string & { __brand: 'LayerTypeID' }
 /**
  * ID слоя
  */
-export type LayerID = number & {
-  __brand: 'LayerID'
-}
+export type LayerID = number & { __brand: 'LayerID' }
 
 /**
  * Строковый ID слоя
  */
-export type LayerIDString = `N${LayerID}`
+export type LayerIDString = `N${LayerID}` & { __brand: 'LayerIDString' }
 
 /**
  * ID точки
