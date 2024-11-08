@@ -130,3 +130,23 @@ export enum CustomFieldType {
    */
   Image = 'image',
 }
+
+/**
+ * Статус запроса
+ */
+export enum RequestStatus {
+  /**
+   * Запрос выполнен успешно
+   */
+  Ok = 'ok',
+
+  /**
+   * Запрос вернул ошибку
+   */
+  Error = 'error',
+
+  /**
+   * Для выполнения запроса требуется авторизация
+   */
+  Auth = 'auth',
+}

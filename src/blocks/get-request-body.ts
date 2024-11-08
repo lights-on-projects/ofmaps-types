@@ -1,4 +1,4 @@
-import { AuthToken } from '../common.types'
+import { AuthToken, RequestStatus } from '../common.types'
 
 /**
  * Общие поля, которые содержит любой запрос
@@ -32,7 +32,7 @@ export interface IGetRequestBody {
    * У некоторых запросов,
    * например get_me, при ошибке авторизации вернется error, а не auth.
    */
-  status: 'ok' | 'error' | 'auth'
+  status: RequestStatus
 
   /**
    * Информация об ошибке
