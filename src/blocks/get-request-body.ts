@@ -39,22 +39,7 @@ export interface IGetRequestBody {
    *
    * Поле доступно только если запрос возвращает ошибку
    */
-  error_info: {
-    /**
-     * Описание ошибки
-     */
-    message: string
-
-    /**
-     * Место возникновения ошибки
-     */
-    place: string
-
-    /**
-     * Трейс ошибки
-     */
-    trace: string
-  }
+  error_info: IErrorInfo
 
   /**
    * Данные для авторизации
@@ -67,4 +52,24 @@ export interface IGetRequestBody {
      */
     wst: AuthToken | '-invalid-'
   }
+}
+
+/**
+ * Информация об ошибке
+ */
+export interface IErrorInfo {
+  /**
+   * Описание ошибки
+   */
+  message: string
+
+  /**
+   * Место возникновения ошибки
+   */
+  place: string
+
+  /**
+   * Трейс ошибки
+   */
+  trace: string
 }
