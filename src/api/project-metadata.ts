@@ -1,6 +1,5 @@
 import { LayerTypeID, UserRole } from '../common.types'
-import { IProjectUserData } from './blocks'
-import { IGetRequestBody } from './get-request-body'
+import { IProjectUserData, IGetRequestBody } from '../blocks'
 import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
 
 /**

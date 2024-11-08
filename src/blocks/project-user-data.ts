@@ -1,5 +1,5 @@
-import { UserRole } from '../../common.types'
-import { IPluginBookings, Plugins } from '../../plugins'
+import { UserRole } from '../common.types'
+import { IPluginBookings, Plugins } from '../plugins'
 
 /**
  * Данные пользователя для работы с проектом

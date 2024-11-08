@@ -5,8 +5,7 @@ import {
   LayerTypeID,
   UserRole,
 } from '../common.types'
-import { IProjectUserData } from './blocks'
-import { IGetRequestBody } from './get-request-body'
+import { IProjectUserData, IGetRequestBody } from '../blocks'
 
 /**
  * Описание запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_tree|GET /project/workspace_id/project_id/API?action=project_tree}
