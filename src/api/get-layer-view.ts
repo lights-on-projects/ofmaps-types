@@ -1,10 +1,13 @@
 import { IGetRequestBody, IProjectUserData, ITreeLayer } from '../blocks'
 import {
+  HEX,
   IImageObject,
   LayerID,
+  LayerTypeName,
   MetablockID,
   PointID,
   PointTypeID,
+  PointTypeName,
   ProjectID,
   UserRole,
   WorkspaceID,
@@ -60,7 +63,14 @@ export interface IGetLayerView extends IGetRequestBody {
      * Данные точек размещенных на карте
      */
     points: IPoint[]
-    polygons: unknown[]
+
+    /**
+     * Данные дочерних слоев (полигонов) размещенных на карте
+     *
+     * Полигон, это дочерний слой, выделенный на карте с помощью многоугольника.
+     * Он может иметь свою заливку, эффект при наведении, обводку, подсказку.
+     */
+    polygons: IPolygon[]
   }
 }
 
@@ -123,7 +133,7 @@ export interface IPoint {
   /**
    * Название типа точки
    */
-  type_name: string
+  type_name: PointTypeName
 
   /**
    * ID типа точки
@@ -151,4 +161,72 @@ export interface IPoint {
    * Координата указана относительно родительского слоя, у которого own_view равно true
    */
   y: number
+}
+
+/**
+ * Данные полигона для отображения на слое (карте)
+ */
+export interface IPolygon {
+  /**
+   * @todo
+   */
+  border_weight: number
+
+  /**
+   * ID слоя
+   */
+  id: LayerID
+
+  /**
+   * Название слоя
+   */
+  name: string
+
+  /**
+   * Полигон (слой) имеет собственное отображение
+   */
+  own_view: boolean
+
+  /**
+   * Данные полигона для размещения на карте
+   */
+  polygon: {
+    /**
+     * Альфа (прозрачность) заливки в значении по умолчанию.
+     *
+     * 0 - Полностью прозрачная
+     * 100 - Непрозрачная
+     */
+    alpha: number
+
+    /**
+     * Цвет фона (заливки) полигона
+     */
+    fill: HEX
+
+    /**
+     * Альфа (прозрачность) заливки при наведении.
+     *
+     * 0 - Полностью прозрачная
+     * 100 - Непрозрачная
+     */
+    hover: number
+
+    /**
+     * Координаты точек полигона в PCU.
+     *
+     * Последняя точка совпадает с первой. Полигон всегда замкнут.
+     */
+    polygon: [number, number][]
+
+    /**
+     * Цвет обводки полигона
+     */
+    stroke: HEX
+  }
+
+  /**
+   * Название типа слоя
+   */
+  type_name: LayerTypeName
 }

@@ -29,6 +29,11 @@ export type ProjectIDString = `P${ProjectID}` & { __brand: 'ProjectIDString' }
 export type LayerTypeID = string & { __brand: 'LayerTypeID' }
 
 /**
+ * Название типа слоя
+ */
+export type LayerTypeName = string & { __brand: 'LayerTypeName' }
+
+/**
  * ID слоя
  */
 export type LayerID = number & { __brand: 'LayerID' }
@@ -47,6 +52,11 @@ export type PointID = string & { __brand: 'PointID' }
  * ID типа точки
  */
 export type PointTypeID = string & { __brand: 'PointTypeID' }
+
+/**
+ * Название типа точки
+ */
+export type PointTypeName = string & { __brand: 'PointTypeName' }
 
 /**
  * ID кастомного поля
