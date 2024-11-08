@@ -1,8 +1,21 @@
 import { IGetRequestBody, IProjectUserData, ITreeLayer } from '../blocks'
-import { IImageObject, UserRole } from '../common.types'
+import {
+  IImageObject,
+  LayerID,
+  MetablockID,
+  PointID,
+  PointTypeID,
+  ProjectID,
+  UserRole,
+  WorkspaceID,
+} from '../common.types'
+import { IPluginBookings, Plugins } from '../plugins'
 
 /**
- * Данные точек и полигонов (дочерних слоев) на определенном слое.
+ * Данные для отображения определенного слоя.
+ *
+ * Объект содержит данные самого слоя, данные дочерних слоев и данные точек размещенных на слое
+ * Если слой не имеет отображения (own_view: false), то запрос вернет ошибку: `error_info.message: "no_visible_layer_found"`
  */
 export interface IGetLayerView extends IGetRequestBody {
   /**
@@ -35,8 +48,107 @@ export interface IGetLayerView extends IGetRequestBody {
      * из данного свойства свойство childs будет удалено. Поэтому, его не рекомендуется использовать.
      */
     map_node: ITreeLayer
+
+    /**
+     * Данные плагинов
+     *
+     * @todo неизвестно какие это данные
+     */
     plugin_data: unknown[]
-    points: unknown[]
+
+    /**
+     * Данные точек размещенных на карте
+     */
+    points: IPoint[]
     polygons: unknown[]
   }
+}
+
+/**
+ * Данные точки для отображения на слое (карте)
+ */
+export interface IPoint {
+  /**
+   * ID точки
+   */
+  id: PointID
+
+  /**
+   * ID метаблока, которому принадлежит точка
+   *
+   * Техническое поле.
+   * @deprecated
+   */
+  metablock: MetablockID
+
+  /**
+   * Название точки
+   */
+  name: string
+
+  /**
+   * ID слоя, которому принадлежит точка
+   *
+   * Это необязательно тот слой, на котором отображается точка.
+   * Это может быть слой, который является дочерним отображаемому.
+   * Обычно таки слои называются полигонами - лой, расположенный на другом слое.
+   */
+  parent: LayerID
+
+  /**
+   * Данные плагинов данной точки
+   */
+  plugin_data: Partial<{
+    [Plugins.Bookings]: IPluginBookings.Point
+  }>
+
+  /**
+   * ID проекта, которому принадлежит точка
+   *
+   * Техническое поле
+   * @deprecated
+   */
+  project: ProjectID
+
+  /**
+   * @todo
+   */
+  raw_data: unknown | null
+
+  /**
+   * Размерный коэффициент
+   */
+  size_k: number
+
+  /**
+   * Название типа точки
+   */
+  type_name: string
+
+  /**
+   * ID типа точки
+   */
+  type_uid: PointTypeID
+
+  /**
+   * ID воркспейса, которому принадлежит точка
+   *
+   * Техническое поле
+   * @deprecated
+   */
+  workspace: WorkspaceID
+
+  /**
+   * Координата по оси x данной точки в xPcu относительно отображаемого слоя.
+   *
+   * Координата указана относительно родительского слоя, у которого own_view равно true
+   */
+  x: number
+
+  /**
+   * Координата по оси y данной точки в yPcu относительно отображаемого слоя.
+   *
+   * Координата указана относительно родительского слоя, у которого own_view равно true
+   */
+  y: number
 }

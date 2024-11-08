@@ -155,7 +155,7 @@ export interface IPointType {
    */
   plugin_data: Partial<
     Record<Plugins, Record<string, any>> & {
-      [Plugins.Bookings]: IPluginBookings.PointType
+      [Plugins.Bookings]: IPluginBookings.Point
       [Plugins.ExtendedFields]: {
         fields: ICustomField[]
       }

@@ -23,11 +23,11 @@ export namespace IPluginBookings {
   }
 
   /**
-   * Данные плагина для типа точки
+   * Данные плагина для точки
    */
-  export interface PointType {
+  export interface Point {
     /**
-     * Данный тип можно забронировать
+     * Точка может быть забронирована
      */
     bookable: boolean
 
