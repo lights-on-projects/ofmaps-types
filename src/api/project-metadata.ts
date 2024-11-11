@@ -2,13 +2,12 @@ import {
   CustomFieldID,
   CustomFieldType,
   HEX,
-  IImageObject,
   LayerTypeID,
   MetablockID,
   PointTypeID,
   WorkspaceID,
 } from '../common.types'
-import { IGetRequestBody, IProjectAccess } from '../blocks'
+import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
 import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
 
 /**

@@ -1,7 +1,12 @@
-import { IGetRequestBody, IProjectAccess, ITreeLayer } from '../blocks'
+import {
+  IGetRequestBody,
+  IProjectAccess,
+  IImageObject,
+  ITreeLayer,
+  IPolygonView,
+} from '../blocks'
 import {
   HEX,
-  IImageObject,
   LayerID,
   LayerTypeName,
   MetablockID,
@@ -18,6 +23,8 @@ import { IPluginBookings, Plugins } from '../plugins'
  *
  * Объект содержит данные самого слоя, данные дочерних слоев и данные точек размещенных на слое
  * Если слой не имеет отображения (own_view: false), то запрос вернет ошибку: `error_info.message: "no_visible_layer_found"`
+ *
+ * {@link https://doc.leader.ironstar.pw/#/01-project/get_layer_view}
  */
 export interface IGetLayerView extends IGetRequestBody, IProjectAccess {
   /**
@@ -55,9 +62,6 @@ export interface IGetLayerView extends IGetRequestBody, IProjectAccess {
 
     /**
      * Данные дочерних слоев (полигонов) размещенных на карте
-     *
-     * Полигон, это дочерний слой, выделенный на карте с помощью многоугольника.
-     * Он может иметь свою заливку, эффект при наведении, обводку, подсказку.
      */
     polygons: IPolygon[]
   }
@@ -177,42 +181,9 @@ export interface IPolygon {
   own_view: boolean
 
   /**
-   * Данные полигона для размещения на карте
+   * Данные слоя для его отображения на карте
    */
-  polygon: {
-    /**
-     * Альфа (прозрачность) заливки в значении по умолчанию.
-     *
-     * 0 - Полностью прозрачная
-     * 100 - Непрозрачная
-     */
-    alpha: number
-
-    /**
-     * Цвет фона (заливки) полигона
-     */
-    fill: HEX
-
-    /**
-     * Альфа (прозрачность) заливки при наведении.
-     *
-     * 0 - Полностью прозрачная
-     * 100 - Непрозрачная
-     */
-    hover: number
-
-    /**
-     * Координаты точек полигона в PCU.
-     *
-     * Последняя точка совпадает с первой. Полигон всегда замкнут.
-     */
-    polygon: [number, number][]
-
-    /**
-     * Цвет обводки полигона
-     */
-    stroke: HEX
-  }
+  polygon: IPolygonView
 
   /**
    * Название типа слоя

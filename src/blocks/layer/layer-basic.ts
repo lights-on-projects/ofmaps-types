@@ -1,9 +1,9 @@
-import { HEX, LayerID, LayerIDString, LayerTypeID } from '../common.types'
+import { HEX, LayerID, LayerTypeID } from '../../common.types'
 
 /**
- * Данные слоя на уровне древа
+ * Базоваые св-ва слоя
  */
-export interface ITreeLayer {
+export interface ILayerBasic {
   /**
    * ID слоя
    */
@@ -27,17 +27,7 @@ export interface ITreeLayer {
   /**
    * @todo
    */
-  cachedrop: string
-
-  /**
-   * @todo
-   */
   child_border_width: number
-
-  /**
-   * Дочерние слои
-   */
-  childs: ITreeLayer[]
 
   /**
    * Текст метки нужно обрезать, если он не вмещается
@@ -60,11 +50,6 @@ export interface ITreeLayer {
   font_size: number
 
   /**
-   * Строковый ID слоя
-   */
-  key: LayerIDString
-
-  /**
    * Ширина метки (текста)
    */
   label_size: number
@@ -78,26 +63,6 @@ export interface ITreeLayer {
    * Содержит собственное отображение (подложку/карту)
    */
   own_view: boolean
-
-  /**
-   * ID родительского слоя
-   */
-  parent_id: LayerID | null
-
-  /**
-   * Строковый ID родительского слоя
-   */
-  parent_key: LayerIDString | null
-
-  /**
-   * Данные плагинов
-   */
-  plugin_data: unknown[]
-
-  /**
-   * @todo
-   */
-  raw_data: unknown | null
 
   /**
    * Текст метки нужно масштабировать при масштабировании карты

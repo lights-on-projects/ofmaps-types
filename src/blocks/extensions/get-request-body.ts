@@ -1,4 +1,4 @@
-import { AuthToken, RequestStatus } from '../common.types'
+import { AuthToken, RequestStatus } from '../../common.types'
 
 /**
  * Общие поля, которые содержит любой запрос
