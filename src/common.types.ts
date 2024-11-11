@@ -251,7 +251,9 @@ export enum RequestStatus {
   Error = 'error',
 
   /**
+   * Пользователь не авторизован
+   *
    * Для выполнения запроса требуется авторизация
    */
-  Auth = 'auth',
+  NotAuthorized = 'auth',
 }
