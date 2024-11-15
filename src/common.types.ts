@@ -89,6 +89,11 @@ export type IconID = string & { __brand: 'IconID' }
 export type BookingID = string & { __brand: 'BookingID' }
 
 /**
+ * ID расширенного поля пользователя
+ */
+export type ExtendedUserFieldID = string & { __brand: 'ExtendedUserField' }
+
+/**
  * Цвет в формате HEX
  */
 export type HEX = string & { __brand: 'HEX' }

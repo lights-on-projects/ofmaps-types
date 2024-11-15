@@ -90,7 +90,7 @@ export interface INodeInfo {
   y: number
 
   /**
-   *
+   * Данные плагинов
    */
   plugin_data: Partial<{
     [Plugins.Bookings]: IPluginBookings.PointType
