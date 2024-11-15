@@ -6,7 +6,6 @@ import {
   IPolygonView,
 } from '../blocks'
 import {
-  HEX,
   LayerID,
   LayerTypeName,
   MetablockID,

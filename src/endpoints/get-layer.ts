@@ -6,7 +6,7 @@ import {
   IPolygonView,
   IProjectAccess,
 } from '../blocks'
-import { HEX, LayerID } from '../common.types'
+import { LayerID } from '../common.types'
 import { IPluginBookings, IPluginExtendedFields, Plugins } from '../plugins'
 
 /**
