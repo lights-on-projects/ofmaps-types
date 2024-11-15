@@ -23,6 +23,16 @@ export namespace IPluginExtendedFields {
      */
     fields: ICustomFieldLayer[]
   }
+
+  /**
+   * Данные плагина для типа точки
+   */
+  export interface PointType {
+    /**
+     * Массив с полями
+     */
+    fields: ICustomFieldPointType[]
+  }
 }
 
 /**
@@ -88,5 +98,25 @@ export interface ICustomFieldLayer {
   /**
    * Значение поля
    */
-  value: string
+  value: string | number | boolean | unknown[] | Record<string, unknown>
+}
+
+/**
+ * Данные кастомного поля у типа точки
+ */
+export interface ICustomFieldPointType {
+  /**
+   * ID поля
+   */
+  field_id: number
+
+  /**
+   * Строковый ID типа кастомного поля
+   */
+  type_id: CustomFieldType
+
+  /**
+   * Значение поля
+   */
+  value: string | number | boolean | unknown[] | Record<string, unknown>
 }

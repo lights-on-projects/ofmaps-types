@@ -21,10 +21,31 @@ export namespace IPluginBookings {
      */
     default_stack: string
   }
+
   /**
    * Данные плагина для типа слоя
    */
   export interface Layer {
+    /**
+     * Данный тип можно забронировать
+     */
+    bookable: boolean
+
+    /**
+     * Категория бронирования по умолчанию
+     */
+    category: string
+
+    /**
+     * Стек бронирования по умолчанию
+     */
+    stack: string
+  }
+
+  /**
+   * Данные плагина для типа точки
+   */
+  export interface PointType {
     /**
      * Данный тип можно забронировать
      */
