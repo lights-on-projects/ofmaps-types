@@ -1,5 +1,6 @@
 import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
 import { UserID, UserRole, WorkspaceID } from '../common.types'
+import { IPluginBookings, IPluginUserFields, Plugins } from '../plugins'
 
 /**
  * Ответа запроса для получени данные точки
@@ -46,9 +47,12 @@ export interface IUserInfo {
   login: string
 
   /**
-   *
+   * Данные плагинов
    */
-  plugin_data: unknown
+  plugin_data: Partial<{
+    [Plugins.Bookings]: IPluginBookings.User
+    [Plugins.UserFields]: IPluginUserFields.User
+  }>
 
   /**
    * Флаг защищенного пользователя.
