@@ -1,26 +1,14 @@
-import { IGetRequestBody, IProjectAccess } from '../blocks'
+import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
 import { ExtendedUserFieldID, UserID } from '../common.types'
 
-export interface IUserList extends IGetRequestBody, IProjectAccess {
+export interface IUserList
+  extends IGetRequestBody,
+    IProjectAccess,
+    ITableRequestBody {
   /**
    * Массив с записями
    */
   items: (Record<ExtendedUserFieldID, string | null> & IUserListItem)[]
-
-  /**
-   * Номер страницы
-   */
-  page: number
-
-  /**
-   * Кол-во записей на текущей странице (в массиве items)
-   */
-  perpage: number
-
-  /**
-   * Общее кол-во записей
-   */
-  total: number
 }
 
 /**
