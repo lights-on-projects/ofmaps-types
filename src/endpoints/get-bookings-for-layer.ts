@@ -1,12 +1,5 @@
 import { IGetRequestBody, IProjectAccess } from '../blocks'
-import {
-  BookingID,
-  DateTimeISO,
-  LayerID,
-  PointID,
-  PointIDString,
-  UserID,
-} from '../common.types'
+import { DateTimeISO, LayerID, PointIDString, UserID } from '../common.types'
 
 /**
  * Получить список броней для определенного слоя
@@ -35,9 +28,12 @@ export interface IBooking {
   booking_custom_data: string
 
   /**
-   * ID брони
+   * ID брони (строка)
+   *
+   * По факту, является типом BookingID, но бэк возвращает строку.
+   * На фронте нужно конвертировать значение в number
    */
-  booking_id: BookingID
+  booking_id: string
 
   /**
    * Имя пользователя, которому принадлежит бронь

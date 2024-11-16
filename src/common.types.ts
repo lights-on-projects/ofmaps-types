@@ -86,7 +86,7 @@ export type IconID = string & { __brand: 'IconID' }
 /**
  * ID брони
  */
-export type BookingID = string & { __brand: 'BookingID' }
+export type BookingID = number & { __brand: 'BookingID' }
 
 /**
  * ID расширенного поля пользователя
