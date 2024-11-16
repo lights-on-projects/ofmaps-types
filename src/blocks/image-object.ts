@@ -18,7 +18,7 @@ export interface IImageObject {
   crops: unknown[]
 
   /**
-   * Расширение иконки
+   * Расширение изображения
    */
   extension: string
 
@@ -30,7 +30,7 @@ export interface IImageObject {
   hash: string
 
   /**
-   * ID иконки
+   * ID изображения
    */
   image_id: IconID
 
