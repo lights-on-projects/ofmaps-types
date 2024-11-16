@@ -1,4 +1,4 @@
-import { ExtendedUserFieldID } from 'common.types'
+import { ExtendedUserFieldID } from '../common.types'
 
 /**
  * Данные плагина UserFields
