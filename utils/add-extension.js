@@ -1,14 +1,3 @@
-/**
- * 1. Получить пути до всех файлов во всех каталогах dist
- * 2. Получить содержимое каждого файла
- * 3. Найти в содержимом импорты
- * 4. Найти по указанному в импорте пути файл
- *  Если по указанному пути расположен каталог, то найти внутри него файл index.d.ts. Если файл найден, добавить импорту /index.js
- *  Если по указанному пути каталог не найден, то найти по тому же пути, но с расширением .d.ts файл. Если он найден, добавить импорту .js
- *  Если ни файл, ни каталог не найдены, сохранить путь в массив и в конце выполнения скрипта вернуть лог со списком неразрешенных импортов.
- * 5. Заменить импорты на новые и сохранить файлы.
- */
-
 import fsPromises from 'fs/promises'
 import path from 'path'
 
@@ -111,7 +100,6 @@ const main = async () => {
       const dirPath = path.dirname(filePath)
       const buffer = await fsPromises.readFile(filePath)
       const content = buffer.toString()
-      // const matches = content.matchAll(/import .+ from ["'](.+)["']/g)
       const matches = content.matchAll(/from ["'](.+)["']/g)
       let contentWithUpdatedImports = content
 

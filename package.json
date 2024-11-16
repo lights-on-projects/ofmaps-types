@@ -9,7 +9,7 @@
     "@ofmaps:registry": "https://gitlab.lights-on.dev/api/v4/projects/13/packages/npm/"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc && node add-extension.js"
+    "build": "rm -rf ./dist && tsc && node utils/add-extension.js"
   },
   "files": [
     "./dist"
