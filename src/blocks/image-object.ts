@@ -2,7 +2,9 @@ import { IconID } from '../common.types'
 import { IKVSProperty } from './kvs-property'
 
 /**
- * Объект с данными изображения точки, слоя (полигона)
+ * Объект с данными изображения
+ *
+ * Изображения используются у слоев, полигонов, точек, пользователей и т.д.
  */
 export interface IImageObject {
   /**
