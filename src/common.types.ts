@@ -94,6 +94,11 @@ export type BookingID = number & { __brand: 'BookingID' }
 export type ExtendedUserFieldID = string & { __brand: 'ExtendedUserField' }
 
 /**
+ * ID отчета
+ */
+export type ReportID = string & { __brand: 'ReportID' }
+
+/**
  * Цвет в формате HEX
  */
 export type HEX = string & { __brand: 'HEX' }
@@ -261,4 +266,14 @@ export enum RequestStatus {
    * Для выполнения запроса требуется авторизация
    */
   NotAuthorized = 'auth',
+}
+
+/**
+ * Уровни доступа пользователей для получения данных отчетов
+ */
+export enum ReportAccessLevel {
+  WpAdmin = 'wpadmin',
+  User = 'user',
+  Anybody = 'anybody',
+  SAdmin = 'sadmin',
 }
