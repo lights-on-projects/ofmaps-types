@@ -20,10 +20,18 @@ export interface ISearchSphinx extends IGetRequestBody, IProjectAccess {
   search_result: ISearchSphinxUser[]
 }
 
+/**
+ * Индексные типы
+ */
 export enum IndexType {
   User = 'user',
   Point = 'point',
 }
+
+/**
+ * Волшебное слово для поиска
+ */
+const SearchMagicWord = '-d3cf70da57184b0da70626d8fe49248f-'
 
 /**
  * Пользователь, полученный в результате поиска
