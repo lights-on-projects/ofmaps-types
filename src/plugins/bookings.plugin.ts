@@ -98,9 +98,23 @@ export namespace IPluginBookings {
   export interface User {
     /**
      * Категории бронирования доступные пользователю
-     *
-     * Да, CurrentUser и User действительно возвращают одно и то же св-во (categories) с разными типами. Это не ошибка.
      */
+    // Да, CurrentUser и User действительно возвращают одно и то же св-во (categories) с разными типами. Это не ошибка.
     categories: string
+  }
+
+  /**
+   * Данные плагина для пользователя в результатах поиска
+   */
+  export interface UserSearch {
+    /**
+     * Категории бронирования доступные пользователю
+     */
+    categories: string[]
+
+    /**
+     * @todo
+     */
+    locations: unknown[]
   }
 }
