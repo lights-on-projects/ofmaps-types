@@ -2,18 +2,18 @@
   "name": "@ofmaps/ofmaps-types",
   "description": "Описание интерфейсов и типов API фронтенда Карт Офиса",
   "version": "0.1.1",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
   "publishConfig": {
     "@ofmaps:registry": "https://gitlab.lights-on.dev/api/v4/projects/13/packages/npm/"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc && node utils/add-extension.js",
+    "build": "rm -rf ./dist && tsc && node utils/add-extension.js && cp package.json README.md ./dist && echo // module.export > ./dist/index.js",
     "format": "prettier . --write"
   },
   "files": [
-    "./dist"
+    "."
   ],
   "keywords": [],
   "author": "Artyom Ugryumov",
