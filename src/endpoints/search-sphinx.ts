@@ -1,12 +1,19 @@
 import { IGetRequestBody, IProjectAccess } from '../blocks'
 import {
+  IndexType,
   LayerID,
+  LayerTypeID,
   PointID,
   PointTypeID,
   UserID,
   UserRole,
 } from '../common.types'
-import { IPluginBookings, IPluginUserFields, Plugins } from '../plugins'
+import {
+  IPluginBookings,
+  IPluginExtendedFields,
+  IPluginUserFields,
+  Plugins,
+} from '../plugins'
 
 /**
  * Данные запроса для поиска
@@ -17,21 +24,13 @@ export interface ISearchSphinx extends IGetRequestBody, IProjectAccess {
   /**
    * Результат поиска
    */
-  search_result: ISearchSphinxUser[]
+  search_result: (
+    | ISearchSphinxUser
+    | ISearchSphinxPoint
+    | ISearchSphinxLayer
+    | ISearchSphinxBooking
+  )[]
 }
-
-/**
- * Индексные типы
- */
-export enum IndexType {
-  User = 'user',
-  Point = 'point',
-}
-
-/**
- * Волшебное слово для поиска
- */
-const SearchMagicWord = '-d3cf70da57184b0da70626d8fe49248f-'
 
 /**
  * Пользователь, полученный в результате поиска
@@ -123,5 +122,69 @@ export interface ISearchSphinxPoint {
   /**
    * Данные плагина Bookings
    */
-  [Plugins.Bookings]: unknown
+  [Plugins.Bookings]: IPluginBookings.PointSearch
+}
+
+/**
+ * Точка, полученная в результате поиска
+ */
+export interface ISearchSphinxLayer {
+  /**
+   * ID слоя
+   */
+  id: LayerID
+
+  /**
+   * Тип найденной записи
+   */
+  'index-type': IndexType.Layer
+
+  /**
+   * Название слоя
+   */
+  name: string
+
+  /**
+   * ID родительсого слоя
+   */
+  parent: LayerID | null
+
+  /**
+   * Путь до точки.
+   *
+   * От дальнего родителя, до ближайшего
+   */
+  path: string[]
+
+  /**
+   * Элементы path, объединенные в строку с помощью точки
+   */
+  pathjd: string
+
+  /**
+   * Название типа слоя
+   */
+  type_name: string
+
+  /**
+   * ID типа слоя
+   */
+  type_uid: LayerTypeID
+
+  /**
+   * Данные плагина ExtendedFields
+   */
+  [Plugins.ExtendedFields]: IPluginExtendedFields.LayerSearch[]
+}
+
+/**
+ * Бронирование, полученное в результате поиска
+ *
+ * @todo Неизвестно какой объект содержит
+ */
+export interface ISearchSphinxBooking {
+  /**
+   * Тип найденной записи
+   */
+  'index-type': IndexType.Booking
 }

@@ -25,6 +25,8 @@ export namespace IPluginUserFields {
 
     /**
      * ID св-ва
+     *
+     * @todo Определить тип св-ва
      */
     uid: string
 

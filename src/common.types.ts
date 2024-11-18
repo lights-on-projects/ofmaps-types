@@ -20,8 +20,10 @@ export type ProjectID = number & { __brand: 'ProjectID' }
 
 /**
  * Строковый ID проекта
+ *
+ * Использует шаблон `P${ProjectID}`
  */
-export type ProjectIDString = `P${ProjectID}` & { __brand: 'ProjectIDString' }
+export type ProjectIDString = string & { __brand: 'ProjectIDString' }
 
 /**
  * ID типа слоя
@@ -40,8 +42,10 @@ export type LayerID = number & { __brand: 'LayerID' }
 
 /**
  * Строковый ID слоя
+ *
+ * Использует шаблон `N${LayerID}`
  */
-export type LayerIDString = `N${LayerID}` & { __brand: 'LayerIDString' }
+export type LayerIDString = string & { __brand: 'LayerIDString' }
 
 /**
  * ID точки
@@ -50,8 +54,10 @@ export type PointID = number & { __brand: 'PointID' }
 
 /**
  * Строковый ID слоя
+ *
+ * Использует шаблон `P${PointID}`
  */
-export type PointIDString = `P${PointID}` & { __brand: 'PointIDString' }
+export type PointIDString = string & { __brand: 'PointIDString' }
 
 /**
  * ID типа точки
@@ -67,6 +73,13 @@ export type PointTypeName = string & { __brand: 'PointTypeName' }
  * ID кастомного поля
  */
 export type CustomFieldID = number & { __brand: 'CustomFieldID' }
+
+/**
+ * Строковый ID кастомного поля
+ *
+ * Использует шаблон `f${CustomFieldID}`
+ */
+export type CustomFieldIDString = string & { __brand: 'CustomFieldIDString' }
 
 /**
  * ID пользователя
@@ -276,4 +289,14 @@ export enum ReportAccessLevel {
   User = 'user',
   Anybody = 'anybody',
   SAdmin = 'sadmin',
+}
+
+/**
+ * Индексные типы
+ */
+export enum IndexType {
+  User = 'user',
+  Point = 'point',
+  Layer = 'layer',
+  Booking = 'booking',
 }

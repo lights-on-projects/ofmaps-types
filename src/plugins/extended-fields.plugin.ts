@@ -1,4 +1,4 @@
-import { CustomFieldType } from '../common.types'
+import { CustomFieldIDString, CustomFieldType } from '../common.types'
 
 /**
  * Данные плагина ExtendedFields
@@ -32,6 +32,33 @@ export namespace IPluginExtendedFields {
      * Массив с полями
      */
     fields: ICustomFieldPointType[]
+  }
+
+  /**
+   * Данные плагина для слоя в результатах поиска
+   */
+  export interface LayerSearch {
+    /**
+     * Строковый ID кастомного поля
+     */
+    id: CustomFieldIDString
+
+    /**
+     * Название кастомного поля
+     */
+    label: string
+
+    /**
+     * Тип кастомного поля
+     */
+    type: CustomFieldType
+
+    /**
+     * Значение кастомного поля
+     *
+     * Тип данных значения зависит от типа кастомного поля
+     */
+    value: string | number | boolean
   }
 }
 
