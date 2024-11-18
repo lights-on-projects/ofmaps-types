@@ -1,5 +1,5 @@
 import { IGetRequestBody, IProjectAccess } from '../blocks'
-import { DateTimeISO, LayerID, PointIDString, UserID } from '../common.types'
+import { DateTimeISO, TLayerID, TPointIDString, TUserID } from '../common.types'
 
 /**
  * Получить список броней для определенного слоя
@@ -10,7 +10,7 @@ export interface IGetBookingsForLayer extends IGetRequestBody, IProjectAccess {
   /**
    * ID слоя, для которого запрашиваются брони
    */
-  requested_layer_id: LayerID
+  requested_layer_id: TLayerID
 
   /**
    * Список броней
@@ -50,7 +50,7 @@ export interface IBooking {
   /**
    * Строковый ID забронированной точки
    */
-  key: PointIDString
+  key: TPointIDString
 
   /**
    * ID забронированной точки (строка)
@@ -84,7 +84,7 @@ export interface IBooking {
   /**
    * ID пользователя, которому принадлежит бронь
    */
-  user_id: UserID
+  user_id: TUserID
 
   /**
    * Временной штамп последнего обновления пользователя

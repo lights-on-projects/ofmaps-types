@@ -1,4 +1,4 @@
-import { HEX, LayerID, LayerTypeID } from '../../common.types'
+import { HEX, TLayerID, TLayerTypeID } from '../../common.types'
 
 /**
  * Базоваые св-ва слоя
@@ -7,12 +7,12 @@ export interface ILayerBasic {
   /**
    * ID слоя
    */
-  id: LayerID
+  id: TLayerID
 
   /**
    * ID типа слоя
    */
-  type_uid: LayerTypeID
+  type_uid: TLayerTypeID
 
   /**
    * @todo

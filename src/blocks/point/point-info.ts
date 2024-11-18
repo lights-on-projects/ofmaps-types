@@ -1,5 +1,5 @@
-import { LayerID, PointID, PointTypeID } from '../../common.types'
-import { IPluginBookings, IPluginExtendedFields, Plugins } from '../../plugins'
+import { TLayerID, TPointID, TPointTypeID } from '../../common.types'
+import { NPluginBookings, NPluginExtendedFields, EPlugin } from '../../plugins'
 import { IKVSProperty } from '../kvs-property'
 
 /**
@@ -15,7 +15,7 @@ export interface IPointInfo {
   /**
    * ID точки
    */
-  id: PointID
+  id: TPointID
 
   /**
    * Описание точки
@@ -30,7 +30,7 @@ export interface IPointInfo {
   /**
    * ID родительского слоя
    */
-  parent: LayerID
+  parent: TLayerID
 
   /**
    * Массив с названиями родительских слоев
@@ -61,7 +61,7 @@ export interface IPointInfo {
   /**
    * ID типа точки
    */
-  type_uid: PointTypeID
+  type_uid: TPointTypeID
 
   /**
    * Координата по оси x данной точки в xPcu относительно отображаемого слоя.
@@ -81,7 +81,7 @@ export interface IPointInfo {
    * Данные плагинов
    */
   plugin_data: Partial<{
-    [Plugins.Bookings]: IPluginBookings.PointType
-    [Plugins.ExtendedFields]: IPluginExtendedFields.PointType
+    [EPlugin.Bookings]: NPluginBookings.PointType
+    [EPlugin.ExtendedFields]: NPluginExtendedFields.PointType
   }>
 }

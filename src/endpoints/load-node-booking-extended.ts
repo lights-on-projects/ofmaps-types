@@ -6,13 +6,13 @@ import {
 } from '../blocks'
 import {
   DateTimeISO,
-  MetablockID,
-  PointID,
-  ProjectID,
-  UserID,
-  WorkspaceID,
+  TMetablockID,
+  TPointID,
+  TProjectID,
+  TUserID,
+  TWorkspaceID,
 } from '../common.types'
-import { Plugins } from '../plugins'
+import { EPlugin } from '../plugins'
 import { INodeBookingViewV2Item } from './node-booking-view-v2'
 
 /**
@@ -82,30 +82,30 @@ export interface IPointBookingExtended
   /**
    * ID метаблока
    */
-  metablock: MetablockID
+  metablock: TMetablockID
 
   /**
    * ID точки
    */
-  node_id: PointID
+  node_id: TPointID
 
   /**
    * ID плагина
    */
-  plugin_id: Plugins
+  plugin_id: EPlugin
 
   /**
    * ID проекта
    */
-  project: ProjectID
+  project: TProjectID
 
   /**
    * ID пользователя
    */
-  user_id: UserID
+  user_id: TUserID
 
   /**
    * ID воркспейса
    */
-  workspace: WorkspaceID
+  workspace: TWorkspaceID
 }

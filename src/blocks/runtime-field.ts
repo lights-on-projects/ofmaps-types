@@ -1,4 +1,4 @@
-import { UserFieldType } from '../common.types'
+import { EUserFieldType } from '../common.types'
 
 /**
  * Данные поля
@@ -93,7 +93,7 @@ export interface IRuntimeField {
   /**
    * Тип поля
    */
-  type: UserFieldType
+  type: EUserFieldType
 
   /**
    * ID поля

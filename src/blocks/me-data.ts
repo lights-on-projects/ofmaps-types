@@ -1,4 +1,9 @@
-import { ProjectIDString, UserID, UserRole, WorkspaceID } from '../common.types'
+import {
+  TProjectIDString,
+  TUserID,
+  EUserRole,
+  TWorkspaceID,
+} from '../common.types'
 
 /**
  * Данные текущего пользователя
@@ -49,26 +54,26 @@ export interface IMeDataUI {
    * Проекты, к которым пользователь имеет доступ.
    * Ключ - строковый id проекта, значение - роль пользователя.
    */
-  projects: Record<ProjectIDString, UserRole>
+  projects: Record<TProjectIDString, EUserRole>
 
   /**
    * Роль пользователя в воркспейсе
    */
-  role: UserRole.Admin | UserRole.Client
+  role: EUserRole.Admin | EUserRole.Client
 
   /**
    * Дубликат role
    * @deprecated
    */
-  role_id: UserRole
+  role_id: EUserRole
 
   /**
    * ID пользователя
    */
-  user_id: UserID
+  user_id: TUserID
 
   /**
    * ID воркспейса
    */
-  workspace_id: WorkspaceID
+  workspace_id: TWorkspaceID
 }

@@ -1,6 +1,6 @@
 import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
-import { UserID, UserRole, WorkspaceID } from '../common.types'
-import { IPluginBookings, IPluginUserFields, Plugins } from '../plugins'
+import { TUserID, EUserRole, TWorkspaceID } from '../common.types'
+import { NPluginBookings, NPluginUserFields, EPlugin } from '../plugins'
 
 /**
  * Ответа запроса для получени данные точки
@@ -39,7 +39,7 @@ export interface IUserInfo {
   /**
    * ID пользователя
    */
-  id: UserID
+  id: TUserID
 
   /**
    * Логин пользователя
@@ -50,8 +50,8 @@ export interface IUserInfo {
    * Данные плагинов
    */
   plugin_data: Partial<{
-    [Plugins.Bookings]: IPluginBookings.User
-    [Plugins.UserFields]: IPluginUserFields.User
+    [EPlugin.Bookings]: NPluginBookings.User
+    [EPlugin.UserFields]: NPluginUserFields.User
   }>
 
   /**
@@ -65,7 +65,7 @@ export interface IUserInfo {
   /**
    * Роль пользователя
    */
-  role: UserRole
+  role: EUserRole
 
   /**
    * Таймштамп последнего обновления данных пользователя
@@ -79,5 +79,5 @@ export interface IUserInfo {
   /**
    * ID воркспейса, которому принадлежит пользователь
    */
-  workspace_id: WorkspaceID
+  workspace_id: TWorkspaceID
 }

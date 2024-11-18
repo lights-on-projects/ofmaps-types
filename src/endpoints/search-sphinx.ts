@@ -1,18 +1,18 @@
 import { IGetRequestBody, IProjectAccess } from '../blocks'
 import {
-  IndexType,
-  LayerID,
-  LayerTypeID,
-  PointID,
-  PointTypeID,
-  UserID,
-  UserRole,
+  EIndexType,
+  TLayerID,
+  TLayerTypeID,
+  TPointID,
+  TPointTypeID,
+  TUserID,
+  EUserRole,
 } from '../common.types'
 import {
-  IPluginBookings,
-  IPluginExtendedFields,
-  IPluginUserFields,
-  Plugins,
+  NPluginBookings,
+  NPluginExtendedFields,
+  NPluginUserFields,
+  EPlugin,
 } from '../plugins'
 
 /**
@@ -39,7 +39,7 @@ export interface ISearchSphinxUser {
   /**
    * ID пользователя
    */
-  id: UserID
+  id: TUserID
 
   /**
    * Имя пользователя
@@ -49,7 +49,7 @@ export interface ISearchSphinxUser {
   /**
    * Тип найденной записи
    */
-  'index-type': IndexType.User
+  'index-type': EIndexType.User
 
   /**
    * Логин пользователя
@@ -59,17 +59,17 @@ export interface ISearchSphinxUser {
   /**
    * Роль пользователя
    */
-  role: UserRole
+  role: EUserRole
 
   /**
    * Данные плагина Bookings
    */
-  [Plugins.Bookings]: IPluginBookings.UserSearch
+  [EPlugin.Bookings]: NPluginBookings.UserSearch
 
   /**
    * Данные плагина UserFields
    */
-  [Plugins.UserFields]: IPluginUserFields.UserSearch[]
+  [EPlugin.UserFields]: NPluginUserFields.UserSearch[]
 }
 
 /**
@@ -79,12 +79,12 @@ export interface ISearchSphinxPoint {
   /**
    * ID точки
    */
-  id: PointID
+  id: TPointID
 
   /**
    * Тип найденной записи
    */
-  'index-type': IndexType.Point
+  'index-type': EIndexType.Point
 
   /**
    * Название точки
@@ -94,7 +94,7 @@ export interface ISearchSphinxPoint {
   /**
    * ID родительского слоя
    */
-  parent: LayerID
+  parent: TLayerID
 
   /**
    * Путь до точки.
@@ -117,12 +117,12 @@ export interface ISearchSphinxPoint {
   /**
    * ID типа точки
    */
-  type_uid: PointTypeID
+  type_uid: TPointTypeID
 
   /**
    * Данные плагина Bookings
    */
-  [Plugins.Bookings]: IPluginBookings.PointSearch
+  [EPlugin.Bookings]: NPluginBookings.PointSearch
 }
 
 /**
@@ -132,12 +132,12 @@ export interface ISearchSphinxLayer {
   /**
    * ID слоя
    */
-  id: LayerID
+  id: TLayerID
 
   /**
    * Тип найденной записи
    */
-  'index-type': IndexType.Layer
+  'index-type': EIndexType.Layer
 
   /**
    * Название слоя
@@ -147,7 +147,7 @@ export interface ISearchSphinxLayer {
   /**
    * ID родительсого слоя
    */
-  parent: LayerID | null
+  parent: TLayerID | null
 
   /**
    * Путь до точки.
@@ -169,12 +169,12 @@ export interface ISearchSphinxLayer {
   /**
    * ID типа слоя
    */
-  type_uid: LayerTypeID
+  type_uid: TLayerTypeID
 
   /**
    * Данные плагина ExtendedFields
    */
-  [Plugins.ExtendedFields]: IPluginExtendedFields.LayerSearch[]
+  [EPlugin.ExtendedFields]: NPluginExtendedFields.LayerSearch[]
 }
 
 /**
@@ -186,5 +186,5 @@ export interface ISearchSphinxBooking {
   /**
    * Тип найденной записи
    */
-  'index-type': IndexType.Booking
+  'index-type': EIndexType.Booking
 }

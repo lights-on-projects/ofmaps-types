@@ -1,115 +1,115 @@
 /**
  * Токен для аутентификации
  */
-export type AuthToken = string & { __brand: 'AuthToken' }
+export type TAuthToken = string & { __brand: 'AuthToken' }
 
 /**
  * ID воркспейса
  */
-export type WorkspaceID = number & { __brand: 'WorkspaceID' }
+export type TWorkspaceID = number & { __brand: 'WorkspaceID' }
 
 /**
  * ID метаблока
  */
-export type MetablockID = number & { __brand: 'MetablockID' }
+export type TMetablockID = number & { __brand: 'MetablockID' }
 
 /**
  * ID проекта
  */
-export type ProjectID = number & { __brand: 'ProjectID' }
+export type TProjectID = number & { __brand: 'ProjectID' }
 
 /**
  * Строковый ID проекта
  *
  * Использует шаблон `P${ProjectID}`
  */
-export type ProjectIDString = string & { __brand: 'ProjectIDString' }
+export type TProjectIDString = string & { __brand: 'ProjectIDString' }
 
 /**
  * ID типа слоя
  */
-export type LayerTypeID = string & { __brand: 'LayerTypeID' }
+export type TLayerTypeID = string & { __brand: 'LayerTypeID' }
 
 /**
  * Название типа слоя
  */
-export type LayerTypeName = string & { __brand: 'LayerTypeName' }
+export type TLayerTypeName = string & { __brand: 'LayerTypeName' }
 
 /**
  * ID слоя
  */
-export type LayerID = number & { __brand: 'LayerID' }
+export type TLayerID = number & { __brand: 'LayerID' }
 
 /**
  * Строковый ID слоя
  *
  * Использует шаблон `N${LayerID}`
  */
-export type LayerIDString = string & { __brand: 'LayerIDString' }
+export type TLayerIDString = string & { __brand: 'LayerIDString' }
 
 /**
  * ID точки
  */
-export type PointID = number & { __brand: 'PointID' }
+export type TPointID = number & { __brand: 'PointID' }
 
 /**
  * Строковый ID слоя
  *
  * Использует шаблон `P${PointID}`
  */
-export type PointIDString = string & { __brand: 'PointIDString' }
+export type TPointIDString = string & { __brand: 'PointIDString' }
 
 /**
  * ID типа точки
  */
-export type PointTypeID = string & { __brand: 'PointTypeID' }
+export type TPointTypeID = string & { __brand: 'PointTypeID' }
 
 /**
  * Название типа точки
  */
-export type PointTypeName = string & { __brand: 'PointTypeName' }
+export type TPointTypeName = string & { __brand: 'PointTypeName' }
 
 /**
  * ID кастомного поля
  */
-export type CustomFieldID = number & { __brand: 'CustomFieldID' }
+export type TCustomFieldID = number & { __brand: 'CustomFieldID' }
 
 /**
  * Строковый ID кастомного поля
  *
  * Использует шаблон `f${CustomFieldID}`
  */
-export type CustomFieldIDString = string & { __brand: 'CustomFieldIDString' }
+export type TCustomFieldIDString = string & { __brand: 'CustomFieldIDString' }
 
 /**
  * ID пользователя
  */
-export type UserID = number & { __brand: 'UserID' }
+export type TUserID = number & { __brand: 'UserID' }
 
 /**
  * ID поля пользователя
  */
-export type UserFieldID = string & { __brand: 'UserFieldID' }
+export type TUserFieldID = string & { __brand: 'UserFieldID' }
 
 /**
  * ID иконки
  */
-export type IconID = string & { __brand: 'IconID' }
+export type TIconID = string & { __brand: 'IconID' }
 
 /**
  * ID брони
  */
-export type BookingID = number & { __brand: 'BookingID' }
+export type TBookingID = number & { __brand: 'BookingID' }
 
 /**
  * ID расширенного поля пользователя
  */
-export type ExtendedUserFieldID = string & { __brand: 'ExtendedUserField' }
+export type TExtendedUserFieldID = string & { __brand: 'ExtendedUserField' }
 
 /**
  * ID отчета
  */
-export type ReportID = string & { __brand: 'ReportID' }
+export type TReportID = string & { __brand: 'ReportID' }
 
 /**
  * Цвет в формате HEX
@@ -134,7 +134,7 @@ export type DateTimeISO = string & { __brand: 'DateTimeISO' }
 /**
  * Роли пользователя
  */
-export enum UserRole {
+export enum EUserRole {
   Admin = 'admin',
   Client = 'client',
   None = 'none',
@@ -143,7 +143,7 @@ export enum UserRole {
 /**
  * Типы кастомных полей
  */
-export enum CustomFieldType {
+export enum ECustomFieldType {
   /**
    * Логический (да/нет)
    */
@@ -210,7 +210,7 @@ export enum CustomFieldType {
 /**
  * Типы полей пользователей
  */
-export enum UserFieldType {
+export enum EUserFieldType {
   /**
    * Логический (да/нет)
    */
@@ -262,7 +262,7 @@ export enum UserFieldType {
 /**
  * Статус запроса
  */
-export enum RequestStatus {
+export enum ERequestStatus {
   /**
    * Запрос выполнен успешно
    */
@@ -284,7 +284,7 @@ export enum RequestStatus {
 /**
  * Уровни доступа пользователей для получения данных отчетов
  */
-export enum ReportAccessLevel {
+export enum EReportAccessLevel {
   WpAdmin = 'wpadmin',
   User = 'user',
   Anybody = 'anybody',
@@ -294,7 +294,7 @@ export enum ReportAccessLevel {
 /**
  * Индексные типы
  */
-export enum IndexType {
+export enum EIndexType {
   User = 'user',
   Point = 'point',
   Layer = 'layer',

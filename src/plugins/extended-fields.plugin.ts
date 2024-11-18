@@ -1,9 +1,9 @@
-import { CustomFieldIDString, CustomFieldType } from '../common.types'
+import { TCustomFieldIDString, ECustomFieldType } from '../common.types'
 
 /**
  * Данные плагина ExtendedFields
  */
-export namespace IPluginExtendedFields {
+export namespace NPluginExtendedFields {
   /**
    * Данные плагина для типа слоя
    */
@@ -41,7 +41,7 @@ export namespace IPluginExtendedFields {
     /**
      * Строковый ID кастомного поля
      */
-    id: CustomFieldIDString
+    id: TCustomFieldIDString
 
     /**
      * Название кастомного поля
@@ -51,7 +51,7 @@ export namespace IPluginExtendedFields {
     /**
      * Тип кастомного поля
      */
-    type: CustomFieldType
+    type: ECustomFieldType
 
     /**
      * Значение кастомного поля
@@ -105,7 +105,7 @@ export interface ICustomFieldLayerType {
   /**
    * Строковый ID типа кастомного поля
    */
-  type_id: CustomFieldType
+  type_id: ECustomFieldType
 }
 
 /**
@@ -120,7 +120,7 @@ export interface ICustomFieldLayer {
   /**
    * Строковый ID типа кастомного поля
    */
-  type_id: CustomFieldType
+  type_id: ECustomFieldType
 
   /**
    * Значение поля
@@ -140,7 +140,7 @@ export interface ICustomFieldPointType {
   /**
    * Строковый ID типа кастомного поля
    */
-  type_id: CustomFieldType
+  type_id: ECustomFieldType
 
   /**
    * Значение поля

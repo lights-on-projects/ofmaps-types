@@ -3,7 +3,7 @@
  *
  * @link https://demoadmin.officescheme.ru/admin/Info/API?action=list_plugins
  */
-export enum Plugins {
+export enum EPlugin {
   /**
    * Сохраняет инфу о том кем и когда была создана бронь
    */

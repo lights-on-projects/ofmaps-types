@@ -1,5 +1,5 @@
 import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
-import { PointID, PointTypeID } from '../common.types'
+import { TPointID, TPointTypeID } from '../common.types'
 
 /**
  * Данные запроса для получения списка точек (объектов)
@@ -64,7 +64,7 @@ export interface INodeListItem {
   /**
    * ID типа точки
    */
-  type_uid: PointTypeID
+  type_uid: TPointTypeID
 
   /**
    * Координата по оси x данной точки в xPcu относительно отображаемого слоя.

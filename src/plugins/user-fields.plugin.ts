@@ -1,13 +1,13 @@
-import { ExtendedUserFieldID, UserFieldType } from '../common.types'
+import { TExtendedUserFieldID, EUserFieldType } from '../common.types'
 
 /**
  * Данные плагина UserFields
  */
-export namespace IPluginUserFields {
+export namespace NPluginUserFields {
   /**
    * Данные плагина для пользователя
    */
-  export type User = Record<ExtendedUserFieldID, string | null>
+  export type User = Record<TExtendedUserFieldID, string | null>
 
   /**
    * Данные плагина для пользователя в результате поиска
@@ -21,7 +21,7 @@ export namespace IPluginUserFields {
     /**
      * Тип св-ва
      */
-    type: UserFieldType
+    type: EUserFieldType
 
     /**
      * ID св-ва

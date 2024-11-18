@@ -1,4 +1,4 @@
-import { MetablockID, ProjectID, WorkspaceID } from '../../common.types'
+import { TMetablockID, TProjectID, TWorkspaceID } from '../../common.types'
 import { IPointInfo } from './point-info'
 
 /**
@@ -14,12 +14,12 @@ export interface IPointInfoSimple
   /**
    * ID метаблока
    */
-  metablock: MetablockID
+  metablock: TMetablockID
 
   /**
    * ID проекта
    */
-  project: ProjectID
+  project: TProjectID
 
   /**
    * @todo
@@ -34,5 +34,5 @@ export interface IPointInfoSimple
   /**
    * ID воркспейса
    */
-  workspace: WorkspaceID
+  workspace: TWorkspaceID
 }

@@ -1,14 +1,11 @@
 import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
-import { ExtendedUserFieldID, UserID } from '../common.types'
+import { TExtendedUserFieldID, TUserID } from '../common.types'
 
-export interface IUserList
-  extends IGetRequestBody,
-    IProjectAccess,
-    ITableRequestBody {
+export interface IUserList extends IGetRequestBody, IProjectAccess, ITableRequestBody {
   /**
    * Массив с записями
    */
-  items: (Record<ExtendedUserFieldID, string | null> & IUserListItem)[]
+  items: (Record<TExtendedUserFieldID, string | null> & IUserListItem)[]
 }
 
 /**
@@ -18,7 +15,7 @@ export interface IUserListItem {
   /**
    * ID пользователя
    */
-  id: UserID
+  id: TUserID
 
   /**
    * Название поля

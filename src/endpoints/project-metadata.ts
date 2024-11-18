@@ -1,14 +1,14 @@
 import {
-  CustomFieldID,
-  CustomFieldType,
+  TCustomFieldID,
+  ECustomFieldType,
   HEX,
-  LayerTypeID,
-  MetablockID,
-  PointTypeID,
-  WorkspaceID,
+  TLayerTypeID,
+  TMetablockID,
+  TPointTypeID,
+  TWorkspaceID,
 } from '../common.types'
 import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
-import { Plugins, IPluginBookings, IPluginExtendedFields } from '../plugins'
+import { EPlugin, NPluginBookings, NPluginExtendedFields } from '../plugins'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}
@@ -47,7 +47,7 @@ export interface IMetablock {
   /**
    * ID метаблока
    */
-  id: MetablockID
+  id: TMetablockID
 
   /**
    * Описание метаблока
@@ -57,7 +57,7 @@ export interface IMetablock {
   /**
    * Список с типами слоёв
    */
-  layers: Record<LayerTypeID, ILayerType>
+  layers: Record<TLayerTypeID, ILayerType>
 
   /**
    * Название метаблока
@@ -72,12 +72,12 @@ export interface IMetablock {
   /**
    * Список включенных плагинов
    */
-  plugins: Plugins[]
+  plugins: EPlugin[]
 
   /**
    * Id воркспейса, которому принадлежит метаблок
    */
-  workspace_id: WorkspaceID
+  workspace_id: TWorkspaceID
 
   /**
    * Название воркспейса, которому принадлежит метаблок
@@ -92,7 +92,7 @@ export interface IPointType {
   /**
    * ID типа точки
    */
-  uid: PointTypeID
+  uid: TPointTypeID
 
   /**
    * Точка может быть размещена в любом типе слоев
@@ -112,7 +112,7 @@ export interface IPointType {
   /**
    * Массив с ID типов слоев, внутри которых точка может быть размещена
    */
-  containers: LayerTypeID[]
+  containers: TLayerTypeID[]
 
   /**
    * Объект иконки типа точки
@@ -143,9 +143,9 @@ export interface IPointType {
    * Данные плагинов для типа точки
    */
   plugin_data: Partial<
-    Record<Plugins, Record<string, any>> & {
-      [Plugins.Bookings]: IPluginBookings.Point
-      [Plugins.ExtendedFields]: {
+    Record<EPlugin, Record<string, any>> & {
+      [EPlugin.Bookings]: NPluginBookings.Point
+      [EPlugin.ExtendedFields]: {
         fields: ICustomField[]
       }
     }
@@ -159,7 +159,7 @@ export interface ICustomField {
   /**
    * ID поля
    */
-  id: CustomFieldID
+  id: TCustomFieldID
 
   /**
    * @todo
@@ -194,7 +194,7 @@ export interface ICustomField {
   /**
    * Строковый id кастомного типа поля
    */
-  type_id: CustomFieldType
+  type_id: ECustomFieldType
 
   /**
    * Название типа кастомного поля
@@ -209,7 +209,7 @@ export interface ILayerType {
   /**
    * Id слоя
    */
-  uid: LayerTypeID
+  uid: TLayerTypeID
 
   /**
    * Название типа слоя
@@ -234,7 +234,7 @@ export interface ILayerType {
   /**
    * Список ID слоёв, в которых может содержаться слой данного типа
    */
-  containers: LayerTypeID[]
+  containers: TLayerTypeID[]
 
   /**
    * Список с данными плагинов
@@ -243,9 +243,9 @@ export interface ILayerType {
    * Для получения данных определенного плагина, используй enum Plugins.
    */
   plugin_data: Partial<
-    Record<Plugins, Record<string, any>> & {
-      [Plugins.Bookings]: IPluginBookings.LayerType
-      [Plugins.ExtendedFields]: IPluginExtendedFields.LayerType
+    Record<EPlugin, Record<string, any>> & {
+      [EPlugin.Bookings]: NPluginBookings.LayerType
+      [EPlugin.ExtendedFields]: NPluginExtendedFields.LayerType
     }
   >
 }

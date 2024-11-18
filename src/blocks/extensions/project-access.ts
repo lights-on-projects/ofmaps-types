@@ -1,11 +1,11 @@
-import { UserRole } from '../../common.types'
-import { IPluginBookings, Plugins } from '../../plugins'
+import { EUserRole } from '../../common.types'
+import { NPluginBookings, EPlugin } from '../../plugins'
 
 export interface IProjectAccess {
   /**
    * Права доступа к текущему проекту
    */
-  project_access: UserRole
+  project_access: EUserRole
 
   /**
    * Данные пользователя для работы с проектом
@@ -22,12 +22,12 @@ export interface IProjectUserData {
    *
    * То же самое, что и `project_access`
    */
-  role: UserRole
+  role: EUserRole
 
   /**
    * Права доступа к воркспейсу
    */
-  wsa: UserRole
+  wsa: EUserRole
 
   /**
    * Настройки плагина для текущего пользователя
@@ -35,8 +35,8 @@ export interface IProjectUserData {
    * Ключи объекта это ID плагинов
    */
   plugin_data: Partial<
-    Record<Plugins, Record<string, any>> & {
-      [Plugins.Bookings]: IPluginBookings.CurrentUser
+    Record<EPlugin, Record<string, any>> & {
+      [EPlugin.Bookings]: NPluginBookings.CurrentUser
     }
   >
 }

@@ -1,4 +1,4 @@
-import { IconID } from '../common.types'
+import { TIconID } from '../common.types'
 import { IKVSProperty } from './kvs-property'
 
 /**
@@ -34,7 +34,7 @@ export interface IImageObject {
   /**
    * ID изображения
    */
-  image_id: IconID
+  image_id: TIconID
 
   /**
    * MIME-тип

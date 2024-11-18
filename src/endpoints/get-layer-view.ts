@@ -6,16 +6,16 @@ import {
   IPolygonView,
 } from '../blocks'
 import {
-  LayerID,
-  LayerTypeName,
-  MetablockID,
-  PointID,
-  PointTypeID,
-  PointTypeName,
-  ProjectID,
-  WorkspaceID,
+  TLayerID,
+  TLayerTypeName,
+  TMetablockID,
+  TPointID,
+  TPointTypeID,
+  TPointTypeName,
+  TProjectID,
+  TWorkspaceID,
 } from '../common.types'
-import { IPluginBookings, Plugins } from '../plugins'
+import { NPluginBookings, EPlugin } from '../plugins'
 
 /**
  * Данные для отображения определенного слоя.
@@ -73,7 +73,7 @@ export interface IPoint {
   /**
    * ID точки
    */
-  id: PointID
+  id: TPointID
 
   /**
    * ID метаблока, которому принадлежит точка
@@ -81,7 +81,7 @@ export interface IPoint {
    * Техническое поле.
    * @deprecated
    */
-  metablock: MetablockID
+  metablock: TMetablockID
 
   /**
    * Название точки
@@ -95,13 +95,13 @@ export interface IPoint {
    * Это может быть слой, который является дочерним отображаемому.
    * Обычно таки слои называются полигонами - лой, расположенный на другом слое.
    */
-  parent: LayerID
+  parent: TLayerID
 
   /**
    * Данные плагинов данной точки
    */
   plugin_data: Partial<{
-    [Plugins.Bookings]: IPluginBookings.Point
+    [EPlugin.Bookings]: NPluginBookings.Point
   }>
 
   /**
@@ -110,7 +110,7 @@ export interface IPoint {
    * Техническое поле
    * @deprecated
    */
-  project: ProjectID
+  project: TProjectID
 
   /**
    * @todo
@@ -125,12 +125,12 @@ export interface IPoint {
   /**
    * Название типа точки
    */
-  type_name: PointTypeName
+  type_name: TPointTypeName
 
   /**
    * ID типа точки
    */
-  type_uid: PointTypeID
+  type_uid: TPointTypeID
 
   /**
    * ID воркспейса, которому принадлежит точка
@@ -138,7 +138,7 @@ export interface IPoint {
    * Техническое поле
    * @deprecated
    */
-  workspace: WorkspaceID
+  workspace: TWorkspaceID
 
   /**
    * Координата по оси x данной точки в xPcu относительно отображаемого слоя.
@@ -167,7 +167,7 @@ export interface IPolygon {
   /**
    * ID слоя
    */
-  id: LayerID
+  id: TLayerID
 
   /**
    * Название слоя
@@ -187,5 +187,5 @@ export interface IPolygon {
   /**
    * Название типа слоя
    */
-  type_name: LayerTypeName
+  type_name: TLayerTypeName
 }

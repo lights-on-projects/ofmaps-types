@@ -1,4 +1,4 @@
-import { LayerID, LayerIDString } from '../../common.types'
+import { TLayerID, TLayerIDString } from '../../common.types'
 
 /**
  * Данные слоя на уровне древа
@@ -17,17 +17,17 @@ export interface ITreeLayer {
   /**
    * Строковый ID слоя
    */
-  key: LayerIDString
+  key: TLayerIDString
 
   /**
    * ID родительского слоя
    */
-  parent_id: LayerID | null
+  parent_id: TLayerID | null
 
   /**
    * Строковый ID родительского слоя
    */
-  parent_key: LayerIDString | null
+  parent_key: TLayerIDString | null
 
   /**
    * Данные плагинов

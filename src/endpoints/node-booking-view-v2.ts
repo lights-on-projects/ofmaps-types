@@ -1,5 +1,5 @@
 import { IGetRequestBody, IProjectAccess } from '../blocks'
-import { BookingID, DateTimeISO, PointID, UserID } from '../common.types'
+import { TBookingID, DateTimeISO, TPointID, TUserID } from '../common.types'
 
 /**
  * Данные запроса для получения конфликтующих броней определенной точки
@@ -40,12 +40,12 @@ export interface INodeBookingViewV2Info {
   /**
    * ID точки
    */
-  resource: PointID
+  resource: TPointID
 
   /**
    * ID пользователя, для которого построен список конфликтов
    */
-  user: UserID
+  user: TUserID
 }
 
 /**
@@ -55,7 +55,7 @@ export interface INodeBookingViewV2Item {
   /**
    * ID брони
    */
-  id: BookingID
+  id: TBookingID
 
   /**
    * Время начала брони
@@ -75,7 +75,7 @@ export interface INodeBookingViewV2Item {
   /**
    * ID забронированной точки
    */
-  point_id: PointID
+  point_id: TPointID
 
   /**
    * Название забронированной точки
@@ -102,7 +102,7 @@ export interface INodeBookingViewV2Item {
   /**
    * ID пользователя - владельца конфликтующей брони
    */
-  user: UserID
+  user: TUserID
 
   /**
    * Имя пользователя

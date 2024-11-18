@@ -6,8 +6,8 @@ import {
   IPolygonView,
   IProjectAccess,
 } from '../blocks'
-import { LayerID } from '../common.types'
-import { IPluginBookings, IPluginExtendedFields, Plugins } from '../plugins'
+import { TLayerID } from '../common.types'
+import { NPluginBookings, NPluginExtendedFields, EPlugin } from '../plugins'
 
 /**
  * Получить данные слоя
@@ -34,7 +34,7 @@ export interface ILayer extends ILayerBasic {
   /**
    * ID ближайшего вышележащего слоя с own_view = true (тоесть имеющего собственную подложку)
    */
-  closest_map_layer: LayerID | null
+  closest_map_layer: TLayerID | null
 
   /**
    * Объект с данными изображения (подложки) слоя
@@ -49,7 +49,7 @@ export interface ILayer extends ILayerBasic {
   /**
    * ID родительского слоя
    */
-  parent: LayerID | null
+  parent: TLayerID | null
 
   /**
    * Объект с данными изображения (подложки) родительского слоя
@@ -77,9 +77,9 @@ export interface ILayer extends ILayerBasic {
    * Данные плагинов
    */
   plugin_data: Partial<
-    Record<Plugins, Record<string, any>> & {
-      [Plugins.Bookings]: IPluginBookings.Layer
-      [Plugins.ExtendedFields]: IPluginExtendedFields.Layer
+    Record<EPlugin, Record<string, any>> & {
+      [EPlugin.Bookings]: NPluginBookings.Layer
+      [EPlugin.ExtendedFields]: NPluginExtendedFields.Layer
     }
   >
 }

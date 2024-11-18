@@ -1,9 +1,9 @@
-import { DateTimeISO, PointTypeID } from '../common.types'
+import { DateTimeISO, TPointTypeID } from '../common.types'
 
 /**
  * Данные плагина Bookings
  */
-export namespace IPluginBookings {
+export namespace NPluginBookings {
   /**
    * Данные плагина для типа слоя
    */
@@ -232,5 +232,5 @@ export interface IUserSearchLocation {
   /**
    * ID типа точки
    */
-  place_type: PointTypeID
+  place_type: TPointTypeID
 }

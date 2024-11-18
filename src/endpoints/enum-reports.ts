@@ -1,6 +1,6 @@
 import { IGetRequestBody } from '../blocks'
-import { ReportAccessLevel, ReportID } from '../common.types'
-import { Plugins } from '../plugins'
+import { EReportAccessLevel, TReportID } from '../common.types'
+import { EPlugin } from '../plugins'
 
 /**
  * Данные запроса для получения списка доступных отчетов
@@ -24,7 +24,7 @@ export interface IReportInfo {
    * - wpadmin - отчет доступен только администраторам проекта/воркспейса
    * - sadmin - только админинстраторам инстанса (тоесть с нового фронта недоступен никому)
    */
-  access_level: ReportAccessLevel
+  access_level: EReportAccessLevel
 
   /**
    * Колонки отчета
@@ -54,10 +54,10 @@ export interface IReportInfo {
    * Нигде не используется
    * @deprecated
    */
-  plugin_id: Plugins
+  plugin_id: EPlugin
 
   /**
    * ID отчета
    */
-  report_id: ReportID
+  report_id: TReportID
 }
