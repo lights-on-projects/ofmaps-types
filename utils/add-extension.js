@@ -1,3 +1,7 @@
+/**
+ * Скрипт ищет все импорты и экспорты (from '...') и добавляет путям расширение .js или /index.js
+ */
+
 import fsPromises from 'fs/promises'
 import path from 'path'
 
