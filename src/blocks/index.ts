@@ -10,5 +10,7 @@ export * from './layer/tree-layer'
 export * from './layer/polygon-view'
 export * from './layer/layer-basic'
 
-export * from './node-info'
+export * from './point/point-info'
+export * from './point/point-info-simple'
+
 export * from './runtime-field'

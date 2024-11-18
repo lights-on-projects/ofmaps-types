@@ -1,11 +1,11 @@
-import { LayerID, PointID, PointTypeID } from '../common.types'
-import { IPluginBookings, IPluginExtendedFields, Plugins } from '../plugins'
-import { IKVSProperty } from './kvs-property'
+import { LayerID, PointID, PointTypeID } from '../../common.types'
+import { IPluginBookings, IPluginExtendedFields, Plugins } from '../../plugins'
+import { IKVSProperty } from '../kvs-property'
 
 /**
  * Данные точки
  */
-export interface INodeInfo {
+export interface IPointInfo {
   /**
    * Техническое поле
    * @deprecated

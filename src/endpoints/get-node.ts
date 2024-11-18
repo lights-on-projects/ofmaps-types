@@ -1,4 +1,4 @@
-import { IGetRequestBody, INodeInfo, IProjectAccess } from '../blocks'
+import { IGetRequestBody, IPointInfo, IProjectAccess } from '../blocks'
 
 /**
  * Ответа запроса для получени данные точки
@@ -9,5 +9,5 @@ export interface IGetNode extends IGetRequestBody, IProjectAccess {
   /**
    * Данные точки
    */
-  node_info: INodeInfo
+  node_info: IPointInfo
 }
