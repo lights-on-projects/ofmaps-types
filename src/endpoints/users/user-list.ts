@@ -1,7 +1,14 @@
-import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
-import { TExtendedUserFieldID, TUserID } from '../common.types'
+import {
+  IGetRequestBody,
+  IProjectAccess,
+  ITableRequestBody,
+} from '../../blocks'
+import { TExtendedUserFieldID, TUserID } from '../../common.types'
 
-export interface IUserList extends IGetRequestBody, IProjectAccess, ITableRequestBody {
+export interface IUserList
+  extends IGetRequestBody,
+    IProjectAccess,
+    ITableRequestBody {
   /**
    * Массив с записями
    */

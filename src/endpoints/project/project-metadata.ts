@@ -6,9 +6,9 @@ import {
   TMetablockID,
   TPointTypeID,
   TWorkspaceID,
-} from '../common.types'
-import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
-import { EPlugin, NPluginBookings, NPluginExtendedFields } from '../plugins'
+} from '../../common.types'
+import { IGetRequestBody, IImageObject, IProjectAccess } from '../../blocks'
+import { EPlugin, NPluginBookings, NPluginExtendedFields } from '../../plugins'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/01-project/project_metadata|GET /project/{workspace_id}/{project_id}/API?action=project_metadata}

@@ -1,4 +1,4 @@
-import { IGetRequestBody, IProjectAccess } from '../blocks'
+import { IGetRequestBody, IProjectAccess } from '../../blocks'
 import {
   EIndexType,
   TLayerID,
@@ -7,13 +7,13 @@ import {
   TPointTypeID,
   TUserID,
   EUserRole,
-} from '../common.types'
+} from '../../common.types'
 import {
   NPluginBookings,
   NPluginExtendedFields,
   NPluginUserFields,
   EPlugin,
-} from '../plugins'
+} from '../../plugins'
 
 /**
  * Данные запроса для поиска

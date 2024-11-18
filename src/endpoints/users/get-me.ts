@@ -1,4 +1,4 @@
-import { IGetRequestBody, IMeData } from '../blocks'
+import { IGetRequestBody, IMeData } from '../../blocks'
 
 /**
  * Ответ запроса {@link https://doc.leader.ironstar.pw/#/00-authorization/app_get_me|GET /App/Auth/API?action=get_me&id={workspace_id}}

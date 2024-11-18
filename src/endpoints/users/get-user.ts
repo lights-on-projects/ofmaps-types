@@ -1,6 +1,6 @@
-import { IGetRequestBody, IImageObject, IProjectAccess } from '../blocks'
-import { TUserID, EUserRole, TWorkspaceID } from '../common.types'
-import { NPluginBookings, NPluginUserFields, EPlugin } from '../plugins'
+import { IGetRequestBody, IImageObject, IProjectAccess } from '../../blocks'
+import { TUserID, EUserRole, TWorkspaceID } from '../../common.types'
+import { NPluginBookings, NPluginUserFields, EPlugin } from '../../plugins'
 
 /**
  * Ответа запроса для получени данные точки

@@ -1,6 +1,6 @@
-import { IGetRequestBody } from '../blocks'
-import { EReportAccessLevel, TReportID } from '../common.types'
-import { EPlugin } from '../plugins'
+import { IGetRequestBody } from '../../blocks'
+import { EReportAccessLevel, TReportID } from '../../common.types'
+import { EPlugin } from '../../plugins'
 
 /**
  * Данные запроса для получения списка доступных отчетов

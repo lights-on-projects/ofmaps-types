@@ -1,5 +1,10 @@
-import { IGetRequestBody, IProjectAccess } from '../blocks'
-import { DateTimeISO, TLayerID, TPointIDString, TUserID } from '../common.types'
+import { IGetRequestBody, IProjectAccess } from '../../blocks'
+import {
+  DateTimeISO,
+  TLayerID,
+  TPointIDString,
+  TUserID,
+} from '../../common.types'
 
 /**
  * Получить список броней для определенного слоя
