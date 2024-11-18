@@ -11,3 +11,4 @@ export * from './layer/polygon-view'
 export * from './layer/layer-basic'
 
 export * from './node-info'
+export * from './runtime-field'
