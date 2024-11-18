@@ -4,7 +4,7 @@ import {
   IImageObject,
   ITreeLayer,
   IPolygonView,
-} from '../blocks'
+} from '../../blocks'
 import {
   TLayerID,
   TLayerTypeName,
@@ -14,8 +14,8 @@ import {
   TPointTypeName,
   TProjectID,
   TWorkspaceID,
-} from '../common.types'
-import { NPluginBookings, EPlugin } from '../plugins'
+} from '../../common.types'
+import { NPluginBookings, EPlugin } from '../../plugins'
 
 /**
  * Данные для отображения определенного слоя.

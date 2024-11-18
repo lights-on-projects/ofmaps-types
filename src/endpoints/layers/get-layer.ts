@@ -5,9 +5,9 @@ import {
   ILayerBasic,
   IPolygonView,
   IProjectAccess,
-} from '../blocks'
-import { TLayerID } from '../common.types'
-import { NPluginBookings, NPluginExtendedFields, EPlugin } from '../plugins'
+} from '../../blocks'
+import { TLayerID } from '../../common.types'
+import { NPluginBookings, NPluginExtendedFields, EPlugin } from '../../plugins'
 
 /**
  * Получить данные слоя

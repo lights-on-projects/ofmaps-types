@@ -1,4 +1,4 @@
-import { IGetRequestBody } from '../blocks'
+import { IGetRequestBody } from '../../blocks'
 
 /**
  * Данные запроса для получения данных о конкретном отчете
