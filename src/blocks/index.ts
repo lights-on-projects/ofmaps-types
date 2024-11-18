@@ -9,3 +9,5 @@ export * from './extensions/table-request-body'
 export * from './layer/tree-layer'
 export * from './layer/polygon-view'
 export * from './layer/layer-basic'
+
+export * from './node-info'
