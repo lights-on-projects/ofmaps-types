@@ -5,7 +5,12 @@ import {
   IProjectAccess,
 } from '../blocks'
 
-export interface IGetNodeForBooking extends IGetRequestBody, IProjectAccess {
+/**
+ * Описание данных метода для получения данных о точке для брони
+ *
+ * {@link https://doc.leader.ironstar.pw/#/02-booking%20plugin/get_node_for_booking}
+ */
+export interface IGetPointForBooking extends IGetRequestBody, IProjectAccess {
   /**
    * Данные запрошенной точки
    */

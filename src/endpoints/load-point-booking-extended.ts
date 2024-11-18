@@ -13,7 +13,7 @@ import {
   TWorkspaceID,
 } from '../common.types'
 import { EPlugin } from '../plugins'
-import { INodeBookingViewV2Item } from './node-booking-view-v2'
+import { IPointBookingViewV2Item } from './point-booking-view-v2'
 
 /**
  * Данные запроса для получения данных брони.
@@ -22,7 +22,7 @@ import { INodeBookingViewV2Item } from './node-booking-view-v2'
  *
  * {@link https://doc.leader.ironstar.pw/#/02-booking%20plugin/load_node_booking_extended}
  */
-export interface ILoadNodeBookingExtended
+export interface ILoadPointBookingExtended
   extends IGetRequestBody,
     IProjectAccess {
   /**
@@ -48,7 +48,7 @@ export interface ILoadNodeBookingExtended
  */
 export interface IPointBookingExtended
   extends Pick<
-    INodeBookingViewV2Item,
+    IPointBookingViewV2Item,
     'id' | 'start' | 'end' | 'gap' | 'rec' | 'user_name'
   > {
   /**

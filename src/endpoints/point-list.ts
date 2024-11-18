@@ -6,7 +6,7 @@ import { TPointID, TPointTypeID } from '../common.types'
  *
  * {@link https://doc.leader.ironstar.pw/#/01-project/node_list}
  */
-export interface INodeList
+export interface IPointList
   extends IGetRequestBody,
     ITableRequestBody,
     IProjectAccess {
@@ -18,13 +18,13 @@ export interface INodeList
    *
    * @todo Неизвестно для чего используются кастомные поля и используются ли вообще?
    */
-  items: (Record<string, string | null> & INodeListItem)[]
+  items: (Record<string, string | null> & IPointListItem)[]
 }
 
 /**
  * Данные элемента списка с точек (объектов)
  */
-export interface INodeListItem {
+export interface IPointListItem {
   /**
    * ID точки
    *

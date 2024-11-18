@@ -5,7 +5,7 @@ import { IGetRequestBody, IPointInfo, IProjectAccess } from '../blocks'
  *
  * {@link https://doc.leader.ironstar.pw/#/01-project/get_node}
  */
-export interface IGetNode extends IGetRequestBody, IProjectAccess {
+export interface IGetPoint extends IGetRequestBody, IProjectAccess {
   /**
    * Данные точки
    */

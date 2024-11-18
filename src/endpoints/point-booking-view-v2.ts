@@ -6,11 +6,11 @@ import { TBookingID, DateTimeISO, TPointID, TUserID } from '../common.types'
  *
  * {@link https://doc.leader.ironstar.pw/#/02-booking%20plugin/node_booking_view_v2}
  */
-export interface INodeBookingViewV2 extends IGetRequestBody, IProjectAccess {
+export interface IPointBookingViewV2 extends IGetRequestBody, IProjectAccess {
   /**
    * Общая информация о конфликтующих бронях
    */
-  node_booking_view_v2: INodeBookingViewV2Info
+  node_booking_view_v2: IPointBookingViewV2Info
 
   /**
    * @todo
@@ -19,9 +19,9 @@ export interface INodeBookingViewV2 extends IGetRequestBody, IProjectAccess {
 }
 
 /**
- * Общая информация о конфликтующих бронях
+ * Общая информация о конфликтующих бронях у определенной точки
  */
-export interface INodeBookingViewV2Info {
+export interface IPointBookingViewV2Info {
   /**
    * Время начала интервала
    */
@@ -35,7 +35,7 @@ export interface INodeBookingViewV2Info {
   /**
    * Список конфликтов
    */
-  items: INodeBookingViewV2Item[]
+  items: IPointBookingViewV2Item[]
 
   /**
    * ID точки
@@ -51,7 +51,7 @@ export interface INodeBookingViewV2Info {
 /**
  * Конфликтующая бронь
  */
-export interface INodeBookingViewV2Item {
+export interface IPointBookingViewV2Item {
   /**
    * ID брони
    */
