@@ -1,19 +1,19 @@
-import { AuthToken } from '../common'
+import { TAuthToken, ERequestStatus } from '../../common.types'
 
 /**
  * Общие поля, которые содержит любой запрос
  */
-export interface GetRequestBody {
+export interface IGetRequestBody {
   /**
    * Данные авторизации
    * @todo неизвестно для чего используется
    */
   authorization: {
     /**
-     * Токен для авторизации. Всегда -invalid-
+     * Токен для авторизации. Всегда invalid
      * @deprecated
      */
-    auth_token: '-invalid-'
+    auth_token: 'invalid'
   }
 
   /**
@@ -32,29 +32,14 @@ export interface GetRequestBody {
    * У некоторых запросов,
    * например get_me, при ошибке авторизации вернется error, а не auth.
    */
-  status: 'ok' | 'error' | 'auth'
+  status: ERequestStatus
 
   /**
    * Информация об ошибке
    *
    * Поле доступно только если запрос возвращает ошибку
    */
-  error_info?: {
-    /**
-     * Описание ошибки
-     */
-    message: string
-
-    /**
-     * Место возникновения ошибки
-     */
-    place: string
-
-    /**
-     * Трейс ошибки
-     */
-    trace: string
-  }
+  error_info: IErrorInfo
 
   /**
    * Данные для авторизации
@@ -65,6 +50,26 @@ export interface GetRequestBody {
      *
      * Если токена нет, будет иметь значение `-invalid-`
      */
-    wst: AuthToken | '-invalid-'
+    wst: TAuthToken | '-invalid-'
   }
+}
+
+/**
+ * Информация об ошибке
+ */
+export interface IErrorInfo {
+  /**
+   * Описание ошибки
+   */
+  message: string
+
+  /**
+   * Место возникновения ошибки
+   */
+  place: string
+
+  /**
+   * Трейс ошибки
+   */
+  trace: string
 }
