@@ -1,5 +1,9 @@
-import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
-import { TPointID, TPointTypeID } from '../common.types'
+import {
+  IGetRequestBody,
+  IProjectAccess,
+  ITableRequestBody,
+} from '../../blocks'
+import { TPointID, TPointTypeID } from '../../common.types'
 
 /**
  * Данные запроса для получения списка точек (объектов)

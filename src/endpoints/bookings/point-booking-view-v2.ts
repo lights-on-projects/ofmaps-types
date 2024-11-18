@@ -1,5 +1,5 @@
-import { IGetRequestBody, IProjectAccess } from '../blocks'
-import { TBookingID, DateTimeISO, TPointID, TUserID } from '../common.types'
+import { IGetRequestBody, IProjectAccess } from '../../blocks'
+import { TBookingID, DateTimeISO, TPointID, TUserID } from '../../common.types'
 
 /**
  * Данные запроса для получения конфликтующих броней определенной точки

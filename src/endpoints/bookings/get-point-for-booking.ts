@@ -3,7 +3,7 @@ import {
   IPointInfo,
   IPointInfoSimple,
   IProjectAccess,
-} from '../blocks'
+} from '../../blocks'
 
 /**
  * Описание данных метода для получения данных о точке для брони

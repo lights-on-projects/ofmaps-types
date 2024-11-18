@@ -1,4 +1,8 @@
-import { IGetRequestBody, IProjectAccess, ITableRequestBody } from '../blocks'
+import {
+  IGetRequestBody,
+  IProjectAccess,
+  ITableRequestBody,
+} from '../../blocks'
 
 /**
  * Данные запроса для получения списка броней

@@ -1,4 +1,4 @@
-import { IGetRequestBody, IProjectAccess, IRuntimeField } from '../blocks'
+import { IGetRequestBody, IProjectAccess, IRuntimeField } from '../../blocks'
 
 /**
  * Данные запроса для получения списка доп. полей от всех плагинов для текущего пользователя

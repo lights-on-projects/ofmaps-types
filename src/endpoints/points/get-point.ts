@@ -1,4 +1,4 @@
-import { IGetRequestBody, IPointInfo, IProjectAccess } from '../blocks'
+import { IGetRequestBody, IPointInfo, IProjectAccess } from '../../blocks'
 
 /**
  * Ответа запроса для получени данные точки

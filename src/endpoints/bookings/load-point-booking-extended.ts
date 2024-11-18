@@ -3,7 +3,7 @@ import {
   IPointInfo,
   IPointInfoSimple,
   IProjectAccess,
-} from '../blocks'
+} from '../../blocks'
 import {
   DateTimeISO,
   TMetablockID,
@@ -11,8 +11,8 @@ import {
   TProjectID,
   TUserID,
   TWorkspaceID,
-} from '../common.types'
-import { EPlugin } from '../plugins'
+} from '../../common.types'
+import { EPlugin } from '../../plugins'
 import { IPointBookingViewV2Item } from './point-booking-view-v2'
 
 /**
