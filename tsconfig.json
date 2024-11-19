@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "strict": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
+    // "emitDeclarationOnly": true,
     "moduleResolution": "node",
     "module": "commonjs",
     "skipLibCheck": true,

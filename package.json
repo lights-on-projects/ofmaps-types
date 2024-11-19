@@ -1,7 +1,7 @@
 {
   "name": "@ofmaps/ofmaps-types",
   "description": "Описание интерфейсов и типов API фронтенда Карт Офиса",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./index.js",
   "module": "./index.js",
   "types": "./index.d.ts",
@@ -9,19 +9,16 @@
     "@ofmaps:registry": "https://gitlab.lights-on.dev/api/v4/projects/13/packages/npm/"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc && node utils/add-extension.js && cp package.json README.md ./dist && echo // module.export > ./dist/index.js",
+    "build": "rm -rf ./dist && tsc && node utils/add-extension.cjs && cp package.json README.md ./dist",
     "format": "prettier . --write"
   },
-  "files": [
-    "."
-  ],
   "keywords": [],
   "author": "Artyom Ugryumov",
   "license": "ISC",
   "devDependencies": {
-    "@lights-on-projects/prettier-config": "^1.0.0",
+    "@lights-on-packages/prettier-config": "^1.0.0",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },
-  "prettier": "@lights-on-projects/prettier-config"
+  "prettier": "@lights-on-packages/prettier-config"
 }
