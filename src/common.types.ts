@@ -1,135 +1,137 @@
+import { Brand } from './utils'
+
 /**
  * Токен для аутентификации
  */
-export type TAuthToken = string & { __brand: 'AuthToken' }
+export type TAuthToken = Brand<string, 'AuthToken'>
 
 /**
  * ID воркспейса
  */
-export type TWorkspaceID = number & { __brand: 'WorkspaceID' }
+export type TWorkspaceID = Brand<number, 'WorkspaceID'>
 
 /**
  * ID метаблока
  */
-export type TMetablockID = number & { __brand: 'MetablockID' }
+export type TMetablockID = Brand<number, 'MetablockID'>
 
 /**
  * ID проекта
  */
-export type TProjectID = number & { __brand: 'ProjectID' }
+export type TProjectID = Brand<number, 'ProjectID'>
 
 /**
  * Строковый ID проекта
  *
  * Использует шаблон `P${ProjectID}`
  */
-export type TProjectIDString = string & { __brand: 'ProjectIDString' }
+export type TProjectIDString = Brand<string, 'ProjectIDString'>
 
 /**
  * ID типа слоя
  */
-export type TLayerTypeID = string & { __brand: 'LayerTypeID' }
+export type TLayerTypeID = Brand<string, 'LayerTypeID'>
 
 /**
  * Название типа слоя
  */
-export type TLayerTypeName = string & { __brand: 'LayerTypeName' }
+export type TLayerTypeName = Brand<string, 'LayerTypeName'>
 
 /**
  * ID слоя
  */
-export type TLayerID = number & { __brand: 'LayerID' }
+export type TLayerID = Brand<number, 'LayerID'>
 
 /**
  * Строковый ID слоя
  *
  * Использует шаблон `N${LayerID}`
  */
-export type TLayerIDString = string & { __brand: 'LayerIDString' }
+export type TLayerIDString = Brand<string, 'LayerIDString'>
 
 /**
  * ID точки
  */
-export type TPointID = number & { __brand: 'PointID' }
+export type TPointID = Brand<number, 'PointID'>
 
 /**
  * Строковый ID слоя
  *
  * Использует шаблон `P${PointID}`
  */
-export type TPointIDString = string & { __brand: 'PointIDString' }
+export type TPointIDString = Brand<string, 'PointIDString'>
 
 /**
  * ID типа точки
  */
-export type TPointTypeID = string & { __brand: 'PointTypeID' }
+export type TPointTypeID = Brand<string, 'PointTypeID'>
 
 /**
  * Название типа точки
  */
-export type TPointTypeName = string & { __brand: 'PointTypeName' }
+export type TPointTypeName = Brand<string, 'PointTypeName'>
 
 /**
  * ID кастомного поля
  */
-export type TCustomFieldID = number & { __brand: 'CustomFieldID' }
+export type TCustomFieldID = Brand<number, 'CustomFieldID'>
 
 /**
  * Строковый ID кастомного поля
  *
  * Использует шаблон `f${CustomFieldID}`
  */
-export type TCustomFieldIDString = string & { __brand: 'CustomFieldIDString' }
+export type TCustomFieldIDString = Brand<string, 'CustomFieldIDString'>
 
 /**
  * ID пользователя
  */
-export type TUserID = number & { __brand: 'UserID' }
+export type TUserID = Brand<number, 'UserID'>
 
 /**
  * ID поля пользователя
  */
-export type TUserFieldID = string & { __brand: 'UserFieldID' }
+export type TUserFieldID = Brand<string, 'UserFieldID'>
 
 /**
  * ID иконки
  */
-export type TIconID = string & { __brand: 'IconID' }
+export type TIconID = Brand<string, 'IconID'>
 
 /**
  * ID брони
  */
-export type TBookingID = number & { __brand: 'BookingID' }
+export type TBookingID = Brand<number, 'BookingID'>
 
 /**
  * ID расширенного поля пользователя
  */
-export type TExtendedUserFieldID = string & { __brand: 'ExtendedUserField' }
+export type TExtendedUserFieldID = Brand<string, 'ExtendedUserField'>
 
 /**
  * ID отчета
  */
-export type TReportID = string & { __brand: 'ReportID' }
+export type TReportID = Brand<string, 'ReportID'>
 
 /**
  * Цвет в формате HEX
  */
-export type HEX = string & { __brand: 'HEX' }
+export type HEX = Brand<string, 'HEX'>
 
 /**
  * Цвет в формате RGB
  */
-export type RGB = string & { __brand: 'RGB' }
+export type RGB = Brand<string, 'RGB'>
 
 /**
  * Дата в формате ISO
  */
-export type DateISO = string & { __brand: 'DateISO' }
+export type DateISO = Brand<string, 'DateISO'>
 
 /**
  * Дата и время в формате ISO
  */
-export type DateTimeISO = string & { __brand: 'DateTimeISO' }
+export type DateTimeISO = Brand<string, 'DateTimeISO'>
 
 /**
  * Роли пользователя
