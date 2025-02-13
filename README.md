@@ -1,6 +1,20 @@
-# Установка
+## Настройка GitLab Registry
 
-Установите пакет как обязательную зависимость. Пакет содержит enums, поэтому он необходим для работы в продакшн
+Определить url для GitLab registry @ofmaps в .npmrc
+
+```bash
+@ofmaps:registry=https://gitlab.lights-on.dev/api/v4/packages/npm/
+```
+
+Добавить токен для аутентификации в GitLab в .npmrc
+
+```bash
+//gitlab.lights-on.dev/api/v4/packages/npm/:_authToken=<YOUR_TOKEN>
+```
+
+## Установка
+
+Установите пакет как обязательную зависимость. Пакет содержит enums и функции для преобразования примитивов в брендированные типы, поэтому он необходим для работы в продакшн
 
 ```bash
 yarn add @ofmaps/ofmaps-types
@@ -11,7 +25,7 @@ yarn add @ofmaps/ofmaps-types
 
 # Нейминг
 
-- Все типы имеют префикс `T`, за исключением RGB, HEX, DateISO и DateTimeISO
+- Все типы имеют префикс `T`, за исключением RGB, HEX, DateISO, DateTimeISO и Brand
 - Все интерфейсы имеют префикс `I`
 - Все неймспейсы имеют префикс `N`
 - Все енамы (enum) имеют префикс `E`
